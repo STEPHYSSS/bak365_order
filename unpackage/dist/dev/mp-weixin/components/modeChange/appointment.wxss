@@ -1,0 +1,56 @@
+
+.indexTop.data-v-362d0f84 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	margin: 10px 0;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+.changeMode.data-v-362d0f84 {
+	width: 140px;
+	height: 50px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	background: #f6f6f6;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	border-radius: 10px;
+	font-size: 14px;
+	color: #D82F37;
+	position: relative;
+	overflow: hidden;
+}
+.changeModeImg.data-v-362d0f84 {
+	width: 25px !important;
+	height: 25px !important;
+}
+.changeModeLeft.data-v-362d0f84 {
+	margin-right: 2%;
+}
+.changeModeRight.data-v-362d0f84 {
+	/* margin-left: 10px; */
+}
+.isActive.data-v-362d0f84 {
+	border: 1px solid #D82F37;
+}
+.changeTopIcon.data-v-362d0f84 {
+	right: 0px;
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	bottom: 0;
+}
+.aboutTimeStyle.data-v-362d0f84 {
+	font-size: 12px;
+	max-width: 82px;
+}
+

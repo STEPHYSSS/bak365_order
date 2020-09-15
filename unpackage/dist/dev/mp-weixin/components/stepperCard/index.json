@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-popup": "/components_uni/uni-popup/uni-popup",
+    "stepper": "/components/stepper-my/index",
+    "uni-goods-nav": "/components_uni/uni-goods-nav/uni-goods-nav",
+    "uni-number-box": "/components_uni/uni-number-box/uni-number-box"
+  }
+}

@@ -1,0 +1,12 @@
+.collage-explain.data-v-6ac6d046 {
+  margin: 20rpx;
+  font-size: 9pt;
+}
+.collage-explain .collage-explain-info.data-v-6ac6d046 {
+  margin-top: 20rpx;
+  font-size: 10pt;
+}
+.collage-explain .collage-explain-title.data-v-6ac6d046 {
+  font-weight: 700;
+}
+

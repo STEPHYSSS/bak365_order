@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-popup": "/components_uni/uni-popup/uni-popup",
+    "mode-change": "/components/modeChange/index"
+  }
+}

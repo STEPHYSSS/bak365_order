@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/indexVip/index",
+    "pages/indexHomePage/index",
+    "pages/indexCanteen/collage/index",
+    "pages/indexOrder/oderList/index",
+    "pages/indexCanteen/paymentOrder/index",
+    "pages/indexCanteen/collage/info",
+    "pages/indexCanteen/collage/collageList",
+    "pages/indexCanteen/collage/explain",
+    "pages/indexMain/index",
+    "pages/indexCanteen/index",
+    "pages/indexCanteen/goodInfo/index",
+    "pages/indexCanteen/flashSale/index",
+    "pages/indexVip/cardBind/index",
+    "pages/indexCanteen/areaList/areaList",
+    "pages/indexCanteen/areaList/qqmapSearch",
+    "pages/indexCanteen/areaList/addArea",
+    "pages/indexVip/cardCharge/index",
+    "pages/indexCanteen/cardPayment/index",
+    "pages/indexCanteen/searchGood/index",
+    "pages/indexVip/couponList/index",
+    "pages/indexVip/couponQRCode/index",
+    "pages/indexVip/consumeList/index",
+    "pages/indexVip/cardUnt/index",
+    "pages/indexOrder/orderInfo/index",
+    "pages/indexCanteen/changeStore/index",
+    "pages/indexMain/vipQRCode/index",
+    "pages/index/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#000",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "selectedColor": "#D82F37",
+    "color": "#cdcdcd",
+    "list": [
+      {
+        "pagePath": "pages/indexCanteen/index",
+        "text": "菜单",
+        "iconPath": "static/images/nav/canteen_1.png",
+        "selectedIconPath": "static/images/nav/canteen.png"
+      },
+      {
+        "pagePath": "pages/indexOrder/oderList/index",
+        "text": "订单",
+        "iconPath": "static/images/nav/order_1.png",
+        "selectedIconPath": "static/images/nav/order.png"
+      },
+      {
+        "pagePath": "pages/indexVip/index",
+        "text": "会员",
+        "iconPath": "static/images/nav/vip_1.png",
+        "selectedIconPath": "static/images/nav/vip.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于为您找到服务门店"
+    }
+  },
+  "usingComponents": {
+    "rotation-chart": "/components/AutoComponents/rotationChart/index",
+    "notice-bar": "/components/AutoComponents/noticeBar/index",
+    "icon-box": "/components/AutoComponents/iconBox/index",
+    "goods-box": "/components/AutoComponents/goodsBox/index",
+    "active-list": "/components/AutoComponents/activeList/index",
+    "collage-list": "/components/AutoComponents/collage/index"
+  },
+  "sitemapLocation": "sitemap47.json"
+}

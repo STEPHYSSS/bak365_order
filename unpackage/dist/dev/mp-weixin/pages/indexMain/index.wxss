@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.uni-popup__wrapper.data-v-4c066d05 {
+  width: 85% !important;
+}
+image.data-v-4c066d05 {
+  width: auto;
+  height: auto;
+}
+.index-main-style.data-v-4c066d05 {
+  padding: 10px;
+  font-size: 12px;
+  position: relative;
+}
+.index-main-style .uni-popup__wrapper.data-v-4c066d05 {
+  width: 85% !important;
+}
+.swiperStyle.data-v-4c066d05 {
+  height: 200px !important;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.swiperImg.data-v-4c066d05 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  vertical-align: middle;
+}
+.judge-time-style.data-v-4c066d05 {
+  font-size: 16px;
+  line-height: 30px;
+}
+.location-icon.data-v-4c066d05 {
+  vertical-align: middle;
+}
+.location-store.data-v-4c066d05 {
+  color: #777;
+  font-size: 12px;
+  margin-left: 4px;
+}
+.view-btn-style.data-v-4c066d05 {
+  font-weight: 700;
+  font-size: 9pt;
+}
+.btn-style-img.data-v-4c066d05 {
+  margin-bottom: 3px;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+}
+.btn-style-font.data-v-4c066d05 {
+  margin-top: 9px;
+  display: inline-block;
+}
+.btn-style-font-c.data-v-4c066d05 {
+  margin-top: 0px;
+  line-height: 12px;
+}
+.box-style-view.data-v-4c066d05 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 18px;
+  padding: 0 10px;
+}
+.box-style-view-chil.data-v-4c066d05 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+.vip-card-style.data-v-4c066d05 {
+  font-size: 25px;
+  padding: 0;
+}
+.vip-card-font.data-v-4c066d05 {
+  margin-top: 5px;
+  color: #645f5f;
+  font-size: 8pt;
+}
+/* sdsdf */
+.btn-main-style.data-v-4c066d05 {
+  text-align: right;
+  border-top: 1px solid #eee;
+}
+.custom-class-discount.data-v-4c066d05 {
+  background: transparent !important;
+  padding-top: 0;
+  /* top: 30% !important; */
+}
+.close-style.data-v-4c066d05 {
+  font-size: 9pt;
+  color: #fff;
+  text-align: center;
+  margin-top: 18px;
+}
+.close-style text.data-v-4c066d05 {
+  display: inline-block;
+  border: 1px solid #FFFFFF;
+  border-radius: 14px;
+  width: 60px;
+  height: 26px;
+  line-height: 24px;
+}
+.discount-hyaline-style.data-v-4c066d05 {
+  /* max-width:300px; */
+  height: 60px;
+}
+.discount-content-style.data-v-4c066d05 {
+  height: 65vh;
+  max-height: 360px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  padding: 70px 10px 0;
+  box-sizing: border-box;
+}
+.discount-content-height-style.data-v-4c066d05 {
+  height: auto;
+}
+.discount-father-style.data-v-4c066d05 {
+  position: relative;
+  /* width: 85vw; */
+  max-width: 360px;
+}
+.discount-box-style.data-v-4c066d05 {
+  width: 100%;
+  height: 29%;
+  background: #fff;
+  border-radius: 3px;
+  margin-top: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.discount-box-left.data-v-4c066d05 {
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  border-right: 2px dotted #a5a4a4;
+  position: relative;
+  padding: 3% 5px 5px;
+  min-width: 80px;
+  /* max-width: 30%; */
+  /* overflow: hidden; */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.discount-info.data-v-4c066d05 {
+  height: 35px;
+  color: #555;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.discount-box-left.data-v-4c066d05::after,
+.discount-box-left.data-v-4c066d05::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #e61e1e;
+  border-radius: 50%;
+  position: absolute;
+  right: -5px;
+}
+.discount-box-left.data-v-4c066d05::after {
+  top: -4px;
+}
+.discount-box-left.data-v-4c066d05::before {
+  bottom: -4px;
+}
+.discount-box-right.data-v-4c066d05 {
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+          flex-grow: 2;
+  padding: 3% 14px 5px;
+}
+.discount-img-style.data-v-4c066d05 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 130px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.discount-box-right-title.data-v-4c066d05 {
+  max-height: 42px;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 700;
+}
+.discount-box-right-time.data-v-4c066d05 {
+  margin-top: 10px;
+  color: #555;
+}
+.storeChangeStyle.data-v-4c066d05 {
+  background: #fff;
+  padding: 20px;
+}
+.storeChangeStyleC.data-v-4c066d05 {
+  line-height: 50px;
+  font-size: 14px;
+}
+@media screen and (max-width: 320px) {
+  /* 当屏幕小于320px的时候 */
+.discount-hyaline-style.data-v-4c066d05 {
+    height: 50px;
+}
+.discount-img-style.data-v-4c066d05 {
+    height: 120px;
+}
+.discount-info.data-v-4c066d05 {
+    font-size: 20rpx;
+    height: 30px;
+}
+.discount-box-right-title.data-v-4c066d05 {
+    max-height: 40px;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 700;
+}
+.discount-box-right-time.data-v-4c066d05 {
+    font-size: 20rpx;
+}
+}
+

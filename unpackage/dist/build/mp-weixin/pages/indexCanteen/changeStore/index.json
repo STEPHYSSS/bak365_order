@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选择门店",
+  "usingComponents": {
+    "node-data": "/components/nodeData/index",
+    "change-store": "/components/poppupChangeOrder/index"
+  }
+}

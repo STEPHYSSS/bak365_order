@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uni-notice-bar": "/components_uni/uni-notice-bar/uni-notice-bar"
+  },
+  "component": true
+}

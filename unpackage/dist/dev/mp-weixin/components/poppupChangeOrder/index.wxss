@@ -1,0 +1,44 @@
+
+.store-custom {
+	max-height: 60vh;
+	padding-bottom: 15px !important;
+}
+.popup-view {
+	padding: 15px;
+	background: #fff !important;
+}
+.cross-icon {
+	position: absolute;
+	right: 10px;
+	top: 0;
+	font-size: 22px;
+	color: rgb(129, 129, 129);
+}
+.store-info-name {
+	font-size: 16px;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+.store-info-style {
+	margin-bottom: 8px;
+	margin-top: 5px;
+	vertical-align: middle;
+	font-size: 14px;
+}
+.store-info-address {
+	font-size: 12px;
+	color: rgb(129, 129, 129);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-top: 4px;
+}
+.radio-label-class {
+	vertical-align: middle !important;
+}
+.radio-label-tip {
+	display: inline-block;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+

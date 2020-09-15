@@ -1,0 +1,38 @@
+
+@mixin wd($color:#D82F37) {
+	.my-tag .uni-tag{
+		color:$color !important;
+		border: 1px solid $color !important;
+	}
+	.activeCanteen{
+		color:$color !important;
+		background: #FFFFFF !important;
+	}
+	.iscurrent{
+		color:$color !important;
+	}
+	.bg-cu-btn{
+		color:#fff !important;
+		background: $color !important;
+	}
+	
+}
+
+
+@mixin btn($color:#D82F37,$linearColor: #d85256) {
+	button{
+		font-size:12pt;
+		 height: 40px !important;
+		 line-height: 40px !important;
+		 color: #fff !important;
+		 background-image: linear-gradient(bottom, $color 0%, $linearColor 100%);
+		 background-image: -o-linear-gradient(bottom, $color 0%, $linearColor 100%);
+		 background-image: -moz-linear-gradient(bottom, $color 0%, $linearColor 100%);
+		 background-image: -webkit-linear-gradient(bottom, $color 0%, $linearColor 100%);
+		 background-image: -ms-linear-gradient(bottom, $color 0%, $linearColor 100%);
+		 box-shadow: 0 5px 8px #f8b1b4;
+		 border-radius: 10em;
+		 border: none !important;
+	}
+	color:$color !important;
+}

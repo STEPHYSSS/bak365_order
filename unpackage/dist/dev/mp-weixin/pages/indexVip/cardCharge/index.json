@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "卡充值",
+  "usingComponents": {
+    "uni-popup": "/components_uni/uni-popup/uni-popup"
+  }
+}

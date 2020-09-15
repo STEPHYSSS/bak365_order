@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "拼团",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "stepper-card": "/components/stepperCard/index",
+    "bottom-submit": "/components/bottomSubmit/index",
+    "u-parse": "/components_uni/gaoyia-parse/parse",
+    "btn-service": "/components/customerService/index",
+    "uni-countdown": "/components_uni/uni-countdown/uni-countdown",
+    "wuc-tab": "/components_uni/wuc-tab/wuc-tab",
+    "change-store": "/pages/indexCanteen/changeStore/index",
+    "change-store-pack": "/components/poppupChangeOrder/index",
+    "uni-icons": "/components_uni/uni-icons/uni-icons",
+    "uni-goods-nav": "/components_uni/uni-goods-nav/uni-goods-nav"
+  }
+}

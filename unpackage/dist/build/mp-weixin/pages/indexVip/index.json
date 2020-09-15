@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "会员中心",
+  "usingComponents": {
+    "cmd-cell-item": "/components_uni/cmd-cell-item/cmd-cell-item",
+    "btn-service": "/components/customerService/index"
+  }
+}

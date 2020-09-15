@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收货地址列表",
+  "usingComponents": {
+    "uni-tag": "/components_uni/uni-tag/uni-tag"
+  }
+}

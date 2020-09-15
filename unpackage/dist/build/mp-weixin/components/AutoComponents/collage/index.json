@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "uni-countdown": "/components_uni/uni-countdown/uni-countdown",
+    "uni-tag": "/components_uni/uni-tag/uni-tag"
+  },
+  "component": true
+}

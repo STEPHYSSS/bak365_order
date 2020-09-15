@@ -1,0 +1,67 @@
+
+.coupon-QR-style.data-v-ad49bcdc {
+	background: #242424;
+	min-height: 100vh;
+	/* height:100%; */
+	padding: 15px;
+	box-sizing: border-box;
+	/* min-height:100%; */
+	font-size: 12pt;
+}
+.coupon-QRcode-style.data-v-ad49bcdc {
+	background: #fff;
+	height: 100%;
+	border-radius: 5px;
+	padding: 8% 0 5px;
+}
+.barcode-str.data-v-ad49bcdc {
+	text-align: center;
+}
+.qrcode-style.data-v-ad49bcdc {
+	margin-left: 50%;
+	-webkit-transform: translateX(-125px);
+	        transform: translateX(-125px);
+}
+.qrcode-style-father.data-v-ad49bcdc {
+	color: #777;
+}
+.qrcode-style-tip.data-v-ad49bcdc {
+	margin-top: 8px;
+}
+.coupon-barcode-orderGood.data-v-ad49bcdc {
+	padding-bottom: 10px;
+	padding: 0 20px 15px;
+}
+.coupon-barcode-style.data-v-ad49bcdc {
+	padding-bottom: 10px;
+	padding: 0 20px 15px;
+	border-bottom: 1px dashed #838181;
+	position: relative;
+}
+.coupon-barcode-style.data-v-ad49bcdc::after,
+.coupon-barcode-style.data-v-ad49bcdc::before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background: #242424;
+	border-radius: 50%;
+	position: absolute;
+	bottom: -5px;
+}
+.coupon-barcode-style.data-v-ad49bcdc::after {
+	left: -5px;
+}
+.coupon-barcode-style.data-v-ad49bcdc::before {
+	right: -5px;
+}
+.coupon-info-style.data-v-ad49bcdc {
+	color: #777;
+	margin-top: 10px;
+	font-size: 10pt;
+}
+.showInfo-style.data-v-ad49bcdc {
+	width: 90%;
+	padding: 10px;
+	border-radius: 5px;
+}
+

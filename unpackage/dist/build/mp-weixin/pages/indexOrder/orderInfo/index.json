@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "cmd-cell-item": "/components_uni/cmd-cell-item/cmd-cell-item",
+    "uni-popup": "/components_uni/uni-popup/uni-popup",
+    "uni-tag": "/components_uni/uni-tag/uni-tag",
+    "goods-box": "/components/goodsBox/index"
+  }
+}

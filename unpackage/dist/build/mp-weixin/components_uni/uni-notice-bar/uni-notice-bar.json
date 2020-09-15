@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-icons": "/components_uni/uni-icons/uni-icons"
+  }
+}

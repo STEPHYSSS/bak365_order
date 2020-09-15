@@ -1,0 +1,50 @@
+
+.indexTop.data-v-ab5e359e {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	margin: 10px 0;
+}
+.changeMode.data-v-ab5e359e {
+	width: 140px;
+	height: 50px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	background: #F6F6F6;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	border-radius: 10px;
+	font-size: 14px;
+	color: #3062a5;
+	position: relative;
+	overflow: hidden;
+}
+.changeModeImg.data-v-ab5e359e {
+	width: 25px !important;
+	height: 25px !important;
+}
+.changeModeLeft.data-v-ab5e359e {
+	margin-right: 15px;
+}
+.changeModeRight.data-v-ab5e359e {
+	margin-left: 5%;
+}
+.isActive.data-v-ab5e359e {
+	border: 1px solid #3062a5;
+}
+.changeTopIcon.data-v-ab5e359e {
+	right: 0px;
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	bottom: 0;
+}
+

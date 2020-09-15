@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "自助点餐",
+  "usingComponents": {
+    "uni-popup": "/components_uni/uni-popup/uni-popup",
+    "change-store": "/components/poppupChangeOrder/index"
+  }
+}

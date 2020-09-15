@@ -1,0 +1,1 @@
+<view class="data-v-e617cbf6"><uni-number-box vue-id="09d5a7e0-1" value="{{numData}}" min="{{0}}" max="{{maxData}}" disabledright="{{currentDisabled}}" disabledAll="{{disabledAll}}" data-event-opts="{{[['^change',[['onChange']]]]}}" bind:change="__e" class="data-v-e617cbf6" bind:__l="__l"></uni-number-box></view>

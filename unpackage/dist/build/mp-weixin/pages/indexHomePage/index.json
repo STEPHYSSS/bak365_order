@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "欢迎光临",
+  "usingComponents": {
+    "change-store-pack": "/components/poppupChangeOrder/index"
+  }
+}

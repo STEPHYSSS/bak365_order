@@ -1,0 +1,343 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+/* 详情信息 */
+.show-head-style {
+	text-align: center;
+	line-height: 25px;
+	border-bottom: 1px solid rgb(177, 176, 176);
+	padding-bottom: 10px;
+}
+.show-center-style {
+	padding: 15px 0;
+	margin-bottom: 5px;
+	height: 180px;
+	overflow-y: scroll;
+}
+.showInfo-style {
+	padding: 10px;
+	border-radius: 5px;
+	background: #FFFFFF;
+	font-size: 11pt;
+}
+.offeredTop {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 80px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  font-size: 7pt;
+}
+.offeredTop .offeredTopDiv {
+  display: inline-block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+.offeredTop .offeredTopImg {
+  width: 26px;
+  height: 26px;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.offeredTop .offeredTopImg image {
+  width: 100%;
+  height: 100%;
+}
+.offeredTop .offeredTopIcon {
+  width: 50rpx;
+}
+.payment-style {
+  background: #FFFFFF;
+  min-height: 100vh;
+  position: relative;
+  /* 	.title-class {
+	padding: 8px
+*/
+}
+.payment-style .customer-service-style {
+  right: 50px;
+}
+.payment-style .calendar-style {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 3;
+  background: #fff;
+  padding-bottom: 41px;
+}
+.payment-style .calendar-style .calendar-revert-style {
+  position: absolute;
+  z-index: 4;
+  top: 14px;
+  left: 14px;
+  font-size: 14px;
+}
+.payment-style .setPack {
+  padding: 10px 10px;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  font-size: 9pt;
+  line-height: 17px;
+}
+.payment-style .setPack .setPackArea {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.payment-style .setPack .setPackAreaLocation {
+  font-size: 10pt;
+  margin-right: 8px;
+}
+.payment-style .pack-is-style {
+  padding: 6px 6px 6px 0;
+  border: 1px solid #D82F37;
+  width: 115px;
+  height: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  background: #f6f6f6;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #D82F37;
+  position: relative;
+  overflow: hidden;
+  float: right;
+}
+.payment-style .pack-is-style image {
+  width: 25px !important;
+  height: 25px !important;
+}
+.payment-style .pack-is-style .changeTopIcon {
+  right: 0px;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  bottom: 0;
+}
+.payment-style .orderTable {
+  padding: 5px;
+  color: #707070;
+  border-top: 4px solid #eee;
+  border-bottom: 1px dashed #eee;
+  font-size: 13pt;
+}
+.payment-style .orderTableShop .iconshop {
+  text-align: right;
+  margin-right: 6px;
+  width: 22px;
+  display: inline-block;
+}
+.payment-style .orderTableShop .orderTableShopRight {
+  float: right;
+}
+.payment-style .orderTableShop .iconShopPhone {
+  font-size: 21px;
+  margin-right: 5px;
+  color: #D82F37;
+}
+.payment-style .popupFa .uni-popup__wrapper-box {
+  background: #fff;
+}
+.payment-style .uni-popup {
+  z-index: 20;
+}
+.payment-style .uni-popup__wrapper-box {
+  padding: 0 !important;
+}
+.payment-style .conponStyle {
+  display: inline-block;
+  padding: 10px 10px;
+  border-top: 8px solid #f5f5f5;
+  border-bottom: 8px solid #f5f5f5;
+  width: 100%;
+}
+.payment-style .iconMy {
+  display: inline-block;
+  vertical-align: middle;
+  color: #d3cfcf;
+  font-size: 20px;
+}
+.payment-style .noCoupon {
+  margin-left: 10px;
+  display: inline-block;
+  line-height: 0;
+  font-size: 14px;
+}
+.payment-style .RemarksFa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin: 10px 0 0;
+}
+.payment-style .Remarks {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  margin: auto;
+}
+.payment-style input {
+  padding: 0;
+}
+.payment-style .inputRemarks {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  margin: 0 10px;
+}
+.payment-style .summary {
+  font-size: 14px;
+  padding: 10px;
+  border-top: 8px solid #f5f5f5;
+  border-bottom: 8px solid #f5f5f5;
+}
+.payment-style .summaryMoney {
+  display: inline-block;
+  line-height: 26px;
+}
+.payment-style .summaryNum {
+  float: right;
+}
+.payment-style .summaryNumClick {
+  float: right;
+  color: #777;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 26px;
+}
+.payment-style .value-class {
+  padding: 8px;
+  font-size: 10pt;
+}
+.payment-style .wechat {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  display: inline-block;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.payment-style .wechat image {
+  width: 100%;
+  height: 100%;
+}
+.payment-style .gold-coin {
+  color: #fdcc63;
+  vertical-align: middle;
+  margin-right: 8px;
+  display: inline-block;
+  font-size: 20px;
+}
+.payment-style .orderBottom {
+  padding-bottom: 60px;
+}
+.payment-style .button-class {
+  background: #ffa006;
+}
+.payment-style .custom-popup {
+  margin-left: -1px;
+}
+.payment-style .no-payCard-style {
+  vertical-align: top;
+  margin-right: 10px;
+}
+.payment-style .custom-class-button {
+  min-width: 80px !important;
+  background: #fdcc63 !important;
+  color: #fff !important;
+  border: 1px solid #fdcc63 !important;
+}
+.payment-style .takeout-page {
+  color: #ffa006;
+  vertical-align: middle;
+  margin: 0px 0 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+}
+.payment-style .takeout-page-left,
+.payment-style .takeout-page-right {
+  display: inline-block;
+}
+.payment-style .page-number {
+  margin: 0 8px;
+  font-size: 10pt;
+  line-height: 26px;
+}
+.payment-style .custom-class-left,
+.payment-style .custom-class-right {
+  font-size: 12px;
+  padding-left: 7px;
+  padding-right: 11px;
+  line-height: 26px;
+  height: 26px;
+  background: #ffa006;
+  color: #fff;
+}
+.payment-style .custom-class-right {
+  padding-left: 11px;
+  padding-right: 7px;
+  margin-right: 10px;
+}
+.payment-style .modeShowStyle {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+}
+.payment-style .modeShowStyle .modeShowBox {
+  margin: 16px;
+}
+

@@ -1,0 +1,1 @@
+<view class="noticeBar-style _div"><uni-notice-bar vue-id="e39ee652-1" speed="50" text="{{propsData.NoticeContent}}" scrollable="false" showIcon="true" bind:__l="__l"></uni-notice-bar></view>

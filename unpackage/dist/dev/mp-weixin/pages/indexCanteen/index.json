@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商品点单",
+  "usingComponents": {
+    "bottom-submit": "/components/bottomSubmit/index",
+    "no-data": "/components/nodeData/index",
+    "goods-box": "/components/goodsBox/index",
+    "stepper-card": "/components/stepperCard/index"
+  }
+}

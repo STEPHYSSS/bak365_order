@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "goods-box": "/components/goodsBox/index",
+    "mode-change": "/components/modeChange/index",
+    "bottom-submit": "/components/bottomSubmit/index",
+    "uni-popup": "/components_uni/uni-popup/uni-popup",
+    "no-data": "/components/nodeData/index",
+    "coupon-box": "/components/couponBox/index",
+    "change-about": "/components/modeChange/appointment",
+    "mpvue-picker": "/components_uni/mpvue-picker/mpvuePicker",
+    "un-calendar": "/components_uni/uni-calendar/uni-calendar",
+    "btn-service": "/components/customerService/index",
+    "uni-icons": "/components_uni/uni-icons/uni-icons"
+  }
+}

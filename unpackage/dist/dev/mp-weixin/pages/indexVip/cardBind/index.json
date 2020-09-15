@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "新增会员卡",
+  "usingComponents": {
+    "uni-popup": "/components_uni/uni-popup/uni-popup",
+    "date-picker": "/components_uni/gpp-datePicker/gpp-datePicker"
+  }
+}

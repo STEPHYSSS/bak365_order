@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-popup": "/components_uni/uni-popup/uni-popup",
+    "submit-bar": "/components/submit-bar/index",
+    "stepper": "/components/stepper-my/index",
+    "uni-number-box": "/components_uni/uni-number-box/uni-number-box"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "优惠券列表",
+  "usingComponents": {
+    "wuc-tab": "/components_uni/wuc-tab/wuc-tab",
+    "coupon-box": "/components/couponBox/index",
+    "uni-popup": "/components_uni/uni-popup/uni-popup",
+    "no-data": "/components/nodeData/index"
+  }
+}

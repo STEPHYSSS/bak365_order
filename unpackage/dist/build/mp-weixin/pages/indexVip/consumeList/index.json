@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "用户记录",
+  "usingComponents": {
+    "wuc-tab": "/components_uni/wuc-tab/wuc-tab",
+    "no-data": "/components/nodeData/index"
+  }
+}

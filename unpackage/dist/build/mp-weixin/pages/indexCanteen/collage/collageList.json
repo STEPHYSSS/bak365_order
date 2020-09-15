@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "懒人凑团",
+  "usingComponents": {
+    "uni-countdown": "/components_uni/uni-countdown/uni-countdown",
+    "no-data": "/components/nodeData/index"
+  }
+}

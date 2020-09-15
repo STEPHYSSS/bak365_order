@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+button.data-v-7417ef3b {
+  height: auto;
+}
+.content.data-v-7417ef3b {
+  width: 100%;
+  margin: 0 auto;
+}
+.account-form.data-v-7417ef3b {
+  overflow: hidden;
+}
+.container .content.data-v-7417ef3b {
+  zoom: 1;
+}
+.account-form .form-title.data-v-7417ef3b {
+  margin: 25px 0 10px;
+  padding: 0 12px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #7c7b83;
+  text-transform: uppercase;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+}
+.account-form .big.data-v-7417ef3b {
+  font-size: 20px;
+  text-align: center;
+  color: #7c7b83;
+}
+.block.data-v-7417ef3b {
+  overflow: hidden;
+  -webkit-border-image: url(http://wxd.bak365.net/wxcs/MobileHtml/PrePur5/img/border-line-2.png) 2 stretch;
+  border-image: url(http://wxd.bak365.net/wxcs/MobileHtml/PrePur5/img/border-line-2.png) 2 stretch;
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+  margin: 10px 0;
+  background-color: #fff;
+  display: block;
+  position: relative;
+  font-size: 14px;
+}
+.block.data-v-7417ef3b {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+.block.block-form.data-v-7417ef3b {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  list-style: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.block.block-form.margin-bottom-normal.data-v-7417ef3b {
+  margin-bottom: 20px;
+}
+.block-item.data-v-7417ef3b {
+  position: relative;
+  display: block;
+  padding: 10px;
+  line-height: 22px;
+  border: 0px none;
+  -webkit-border-image: url(http://wxd.bak365.net/wxcs/MobileHtml/PrePur5/img/border-line.png) 2 stretch;
+  border-image: url(http://wxd.bak365.net/wxcs/MobileHtml/PrePur5/img/border-line.png) 2 stretch;
+  border-bottom: 2px solid #e5e5e5;
+  overflow: hidden;
+}
+.block.block-form .block-item.data-v-7417ef3b {
+  display: table;
+  width: 100%;
+  padding: 0;
+}
+.block.block-form .block-item.data-v-7417ef3b:last-child {
+  border-bottom: 0px none;
+}
+.block.block-form .block-item .label.data-v-7417ef3b {
+  display: table-cell;
+  width: 90px;
+  padding: 10px 0;
+  vertical-align: middle;
+}
+.block.block-form .block-item textarea.data-v-7417ef3b,
+.block.block-form .block-item input.data-v-7417ef3b,
+.block.block-form .block-item ._select.data-v-7417ef3b,
+.block.block-form .block-item ._a.data-v-7417ef3b,
+.block.block-form .block-item ._span.data-v-7417ef3b {
+  display: table-cell;
+  overflow: hidden;
+  padding: 10px 0;
+  min-height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+}
+.block.block-form .block-item textarea.data-v-7417ef3b,
+.block.block-form .block-item input.data-v-7417ef3b,
+.block.block-form .block-item ._select.data-v-7417ef3b {
+  background-color: #fff;
+  border: 0px none;
+  outline: none;
+}
+.action-container.data-v-7417ef3b {
+  padding: 0 10px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.account-form button.data-v-7417ef3b {
+  border: 1px solid #e5e5e5;
+}
+.btn.btn-green.data-v-7417ef3b {
+  color: #fff;
+  background-color: #06bf04;
+  border-color: #03b401;
+}
+.btn.btn-block.data-v-7417ef3b {
+  text-align: center;
+  width: 100%;
+  padding: 11px 10px;
+  font-size: 16px;
+  line-height: 16px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+

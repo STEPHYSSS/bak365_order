@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.orderStoreInfo.data-v-ab6a0e36 {
+  background: #eee;
+  min-height: 100vh;
+  font-size: 11pt;
+}
+.setPackArea.data-v-ab6a0e36 {
+  background: #fff;
+  padding: 12px 10px;
+  border-bottom: 1px dashed #eee;
+}
+.setPackArea .setPackAreaLocation.data-v-ab6a0e36 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.orderNum.data-v-ab6a0e36 {
+  padding: 5px;
+  color: #707070;
+  border-top: 8px solid #eee;
+  border-bottom: 1px dashed #eee;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.goods-box-style.data-v-ab6a0e36,
+.orderNum.data-v-ab6a0e36,
+.priceStyle.data-v-ab6a0e36,
+.orderData.data-v-ab6a0e36 {
+  background: #fff;
+}
+.orderNumIcon.data-v-ab6a0e36 {
+  vertical-align: middle;
+  font-size: 14pt;
+  margin-right: 5px;
+}
+.copyBtn.data-v-ab6a0e36 {
+  float: right;
+}
+.priceStyle.data-v-ab6a0e36 {
+  border-top: 8px solid #eee;
+}
+.custom-class.data-v-ab6a0e36 {
+  color: #474646 !important;
+}
+.value-class.data-v-ab6a0e36 {
+  font-weight: 600;
+  color: #000 !important;
+}
+.payment.data-v-ab6a0e36 {
+  text-align: right;
+  padding: 15px 10px;
+  /* border-bottom: 8px solid #eee; */
+  border-top: 1px solid #eee;
+}
+.paymentLeft.data-v-ab6a0e36 {
+  margin-right: 10px;
+}
+.paymentRight.data-v-ab6a0e36 {
+  font-weight: 700;
+}
+.orderData.data-v-ab6a0e36 {
+  border-top: 8px solid #eee;
+  font-size: 13px;
+  color: #707070;
+  padding: 10px 10px 0 10px;
+}
+.orderTime.data-v-ab6a0e36 {
+  padding-bottom: 10px;
+}
+.orderTime .orderTime_label.data-v-ab6a0e36 {
+  width: 92px;
+  text-align: right;
+  margin-right: 4px;
+  display: inline-block;
+}
+.paymentBtn.data-v-ab6a0e36 {
+  background: #fff;
+  text-align: right;
+  margin-right: 10px;
+  padding-bottom: 15px;
+}
+.custom-class-popup.data-v-ab6a0e36 {
+  background: #FFFFFF;
+  padding: 20px;
+  max-width: 310px;
+}
+.change-pay-style.data-v-ab6a0e36 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.van-cell.data-v-ab6a0e36 {
+  padding: 5px 15px 0 !important;
+}
+.goodVal.data-v-ab6a0e36 {
+  background: white;
+  margin-bottom: 10px;
+  line-height: 34px;
+  padding-left: 5px;
+  color: #777777;
+  font-size: 11pt;
+}
+.income-class-popup.data-v-ab6a0e36 {
+  background: #fff;
+  max-width: 320px;
+  text-align: center;
+  padding: 18px;
+}
+

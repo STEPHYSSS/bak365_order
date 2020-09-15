@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "新增地址",
+  "usingComponents": {
+    "cmd-cell-item": "/components_uni/cmd-cell-item/cmd-cell-item",
+    "uni-popup": "/components_uni/uni-popup/uni-popup"
+  }
+}
