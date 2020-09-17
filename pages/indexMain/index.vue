@@ -17,7 +17,7 @@
 				<text class="location-store">附近门店： {{currentStore.ShopName}} <text v-if="shopStoreSpace">约{{currentStore.shopStoreSpace}}</text>
 				</text>
 			</view>
-
+			<!-- v-if="loading" 打包的时候记得加入到 :class="'btnMy'+colorIndex" 后面作为条件判断-->
 			<view style="padding:10px 10px;margin-top:20px;" :class="'btnMy'+colorIndex">
 				<button size="large" @click="startOrder">
 					<view class="view-btn-style">
@@ -29,8 +29,8 @@
 					</view>
 				</button>
 			</view>
-
-			<view class="box-style-view" v-if="loading">
+			<!-- v-if="loading" 同上 -->
+			<view class="box-style-view" >
 				<view v-if="isShowCode==='1'" class="box-style-view-chil" @click="clickMyCode">
 					<text class="icon vip-card-style" :style="{color:colorItem}">&#xe62b;</text>
 					<view class="vip-card-font">会员码</view>
@@ -171,9 +171,8 @@
 			getArea() {
 				APIList.api('ShopInfo.aspx', this.location).then(D => {
 					this.currentStore = D.ShopInfo[0]
-					console.log(D,'shopInfo')
 					if (!app.globalData.shopNo && this.location.Latitude) { //授权了定位才能弹框
-						this.$refs.storeChangePopup.open()
+						// this.$refs.storeChangePopup.open()
 						let _this = this
 						uni.showModal({
 							title: '选择门店',
@@ -186,8 +185,7 @@
 							}
 						});
 					}
-					// this.getObj(D.ShopInfo[0].ShopNo) 暂时注释
-					this.getObj('0103')
+					this.getObj(D.ShopInfo[0].ShopNo)
 				}).catch(e => {})
 			},
 			getObj(shopNo) {
@@ -228,11 +226,11 @@
 			},
 			startOrder() {
 				let a = this.modeChange.LogisticsDistribution //配送
-				let b = this.modeChange.OrderEatInStore //堂食
+				// let b = this.modeChange.OrderEatInStore //堂食//打包的时候记得打开
 				let c = this.modeChange.OrderEatPackAway //打包
 
 				// let a = '1'
-				// let b = '1'
+				let b = '1'
 				// let c = '1'
 				let setModeIfVal = setModeIf(a, b, c) //是否只有一种选择几餐方式  true--不止一种
 
@@ -346,9 +344,9 @@
 		onLoad: function(options) {
 			this.ActiveID = options.options
 			// 只执行一遍
-			console.log(options.q)
+			// console.log(options.q)
 			// var httpUrl = options.q ? decodeURIComponent(options.q) : ''
-			var httpUrl = 'https://we.bak365.net/SmallProgramSaleOrder/Mobile/SmallProgramIndexLink.aspx?ShopNo=0103&TableNumber=2'
+			var httpUrl = 'https://we.bak365.net/SmallProgramSaleOrder/Mobile/SmallProgramIndexLink.aspx?ShopNo=0600&TableNumber=2'
 			var objParam = {}
 			if (httpUrl) {
 				//截取
@@ -382,15 +380,20 @@
 
 			if (options.currentShop) {
 				//附近门店返回过来的
-				// this.currentStore = JSON.parse(options.currentShop)暂时注释
-				// this.shopNo = this.currentStore.ShopNo暂时注释
+				// this.currentStore = JSON.parse(options.currentShop)//暂时注释
+				// this.shopNo = this.currentStore.ShopNo //暂时注释
+				// uni.setStorageSync('shopLocation', {
+				// 	latitude: this.currentStore.Latitude || '',
+				// 	longitude: this.currentStore.Longitude || ''
+				// })
+				// 打包的时候注释掉
 				uni.setStorageSync('shopLocation', {
 					latitude: this.currentStore.Latitude || '',
 					longitude: this.currentStore.Longitude || ''
 				})
-				uni.setStorageSync('shopLocationName', this.currentStore.ShopName)
+				// uni.setStorageSync('shopLocationName', this.currentStore.ShopName)
 			}
-			uni.removeStorageSync('shopLocation'); //清除之前选中门店信息
+			// uni.removeStorageSync('shopLocation'); //清除之前选中门店信息
 			// uni.getLocation({
 			// 	type: 'wgs84',
 			// 	success(res) {
@@ -426,7 +429,7 @@
 			// 			_this.isweixin = app.globalData.provider === 'weixin' ? true : false
 			// 		}
 			// 	}
-			// })
+			// })//打包的时候打开
 
 		},
 		onShow() {

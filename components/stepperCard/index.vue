@@ -1,19 +1,19 @@
 <template>
 	<view class="sterperCard-style">
-		<div v-if="!isCollage&&!isCollageInfo">
-			<text v-if="!newItemData.showStepper&&newItemData.StockQty>0" class="icon stepperStyle fontColor" @click="clickTag">&#xe616;</text>
-
+		<!-- v-if="!isCollage&&!isCollageInfo" -->
+		<div>
+			<text class="icon stepperStyle fontColor" @click="clickTag">&#xe616;</text>
+			<!-- 商品数量（StockQty）等于0 的时候代表售罄了 -->
 			<text v-if="!newItemData.showStepper&&newItemData.StockQty<=0" class="icon stepperStyle fontColorGray" @click="clickTagEmpty">&#xe616;</text>
 			<stepper v-if="newItemData.showStepper" @stepperNum="stepperNumChange" :numData="newItemData.num" :currentDisabled="disabled"
 			 :disabledAll="disabledAll" :maxData="surplusStock"></stepper>
-
 		</div>
 		<div class="goods-nav-fixed" v-if="isCollage&&!isCollageInfo">
 			<uni-goods-nav :fill="true" options="[]" :buttonGroup="buttonGroup" @buttonClick="buttonClick" />
 		</div>
 
 		<slot></slot>
-
+		<!-- 商品规格弹窗 -->
 		<uni-popup :show="showPopup" @change="onClose" class="customPopup">
 			<view class="my-popup-style">
 				<view class="popupStyleTitle">{{newItemData.ProdName}}
@@ -116,7 +116,12 @@
 			isCollageInfo: {
 				type: Boolean,
 				value: false
-			}
+			},
+			// 控制左右都不让点击
+			disabledAll: {
+				type: Boolean,
+				value: false
+			},
 		},
 		data() {
 			return {
@@ -163,7 +168,8 @@
 				// 原价购买（拼团使用）
 				originalPrice: false,
 				// newItemData: {},
-				userInfo_empower: {}
+				userInfo_empower: {},
+				disabled:false//
 			}
 		},
 		mounted() {
@@ -181,15 +187,18 @@
 		},
 		computed: {
 			newItemData(){
-				// console.log(this.itemData,8888889)
+				console.log(this.itemData,8888889)
 				return this.itemData
 			}
 		},
 		methods: {
 			setDecimalFun(val) {
+				console.log(val,'SalePrice')
 				return utils.setDecimal(val)
 			},
 			stepperChange(stepperParam) {
+				// 点击加入购物车应该展示下面的购物车栏
+				console.log(stepperParam,'what')
 				// console.log(this.recordFlavor, 2222)
 				// console.log(this.recordParts, 1111)
 
@@ -258,10 +267,13 @@
 				this.recordParts = []
 				this.currentSpecsObj = {}
 			},
+			// 商品弹出窗中商品购买数量点击事件
 			onChangeNum(val) {
+				console.log(val,'商品弹出窗中商品购买数量点击事件')
 				this.newItemData.num = val
 			},
 			clickTag() {
+				// 点击的购物车按钮  商品分为单规格和多规格
 				APIList.api('ProdPartsOrTast.aspx', {
 					ProdNo: this.newItemData.ProdNo,
 					ActiveID: this.originalPrice ? '' : (this.newItemData.ActiveID || '')
@@ -301,9 +313,11 @@
 						// this.data.newItemData.showStepper = false
 					} else {
 						if (!this.isCollage) {
+						
 							// 直接加入购物车
 							this.$emit('setShowStepper', true)
 							this.newItemData.showStepper = true
+							// this.data.newItemData.showStepper = true
 							this.stepperChange()
 						}
 					}
@@ -328,6 +342,7 @@
 				}
 			},
 			tapCurrentLiSpecs(CombNo) {
+				console.log(CombNo,'zhe')
 				this.currentSpecs = CombNo
 				let arr = this.listData.specs.normsArr.filter(D => D.CombNo === CombNo)
 				this.currentSpecsObj = arr[0]
@@ -342,6 +357,7 @@
 				getDataArrr(this, 'parts', 'recordParts', e)
 			},
 			stepperNumChange(e) {
+				console.log(e,'从子组件中得到的数据')
 				this.stepperChange(e)
 			},
 			clickTagEmpty() {

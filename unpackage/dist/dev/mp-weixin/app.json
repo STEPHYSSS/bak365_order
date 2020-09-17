@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/indexVip/index",
     "pages/indexHomePage/index",
     "pages/indexCanteen/collage/index",
     "pages/indexOrder/oderList/index",
     "pages/indexCanteen/paymentOrder/index",
     "pages/indexCanteen/collage/info",
     "pages/indexCanteen/collage/collageList",
+    "pages/indexVip/index",
     "pages/indexCanteen/collage/explain",
     "pages/indexMain/index",
     "pages/indexCanteen/index",
@@ -72,5 +72,5 @@
     "active-list": "/components/AutoComponents/activeList/index",
     "collage-list": "/components/AutoComponents/collage/index"
   },
-  "sitemapLocation": "sitemap47.json"
+  "sitemapLocation": "sitemap22.json"
 }

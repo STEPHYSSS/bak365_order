@@ -1,8 +1,8 @@
 {
 	"extEnable": true,
-	"extAppid": "wx5349c5e963833f38",
+	"extAppid": "wx8533c799cadaa11a",
 	"ext": {
-		"appID": "wx5349c5e963833f38",
+		"appID": "wx8533c799cadaa11a",
 		"tabBarPage": "pages/index/index,pages/bonuse/bonuse"
 	},
 	"navigateToMiniProgramAppIdList": [

@@ -12,7 +12,7 @@ const store = new Vuex.Store({
 	mutations: {
 
 	},
-	actions: {		
+	actions: {
 		Login() {
 			// 登录
 			let app = getApp()

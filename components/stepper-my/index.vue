@@ -42,12 +42,12 @@
 		},
 		computed: {},
 		methods: {
-			onChange(e) {
+			onChange(goodsNum) {
 				// if (e == this.numData) {
 				// 	// 默认值的时候不可以执行
 				// 	return
 				// }
-				this.$emit('stepperNum', e)
+				this.$emit('stepperNum', goodsNum)
 			}
 		}
 	}

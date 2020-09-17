@@ -21,8 +21,8 @@
 				</view>
 			</view>
 
-
-			<view class="stepperStyle" v-if="!isOrder&&!isSearch">
+				 <!-- v-if="!isOrder&&!isSearch" -->
+			<view class="stepperStyle">
 				<stepper-card :itemData="itemData" @mycurrentPage="mycurrentPage" @setShowStepper="setShowStepper"></stepper-card>
 			</view>
 		</view>

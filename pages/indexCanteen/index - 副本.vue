@@ -41,32 +41,36 @@
 				</goods-box>
 				<no-data v-if="arrayList.length===0"></no-data>
 			</view>
+			<view class="stepperStyle" style="background-color: skyblue;">
+				<stepper-card :itemData="goodCodeData" @mycurrentPage="mycurrentPage" :isShowCode="isShowCode"></stepper-card>
+				456454
+			</view>
 		</view>
 		<button v-if="WXSmallProgramKf==='1'&&provider==='weixin'" open-type="contact" @contact="handleContact"
 		 :show-message-card="true" send-message-img send-message-path="/pages/indexCanteen/index" send-message-title="商品列表">
 			<span class="icon customer-service-style" :style="{'color': itemColor,
 			'border': '1px solid'+ itemColor}">&#xe60a;</span>
 		</button>
-		<bottomSubmit ></bottomSubmit>
+		<!-- <bottomSubmit ></bottomSubmit> -->
 	</view>
 </template>
 
 <script>
 	let app = getApp()
 	import APIList from '@/api/http.js';
-	import bottomSubmit from '@/components/bottomSubmit/index.vue'
+	// import bottomSubmit from '@/components/bottomSubmit/index.vue'
+	import bottomSubmit from "../../components/bottomSubmit/index.vue"
 	import noData from '@/components/nodeData/index.vue'
 	import goodsBox from '@/components/goodsBox/index.vue'
 	import stepperCard from '@/components/stepperCard/index.vue'
-import submitBar from "@/components/submit-bar/index.vue"
+
 	var utils = require('@/utils/utils.js')
 	export default {
 		components: {
 			bottomSubmit,
 			noData,
 			goodsBox,
-			stepperCard,
-			submitBar,
+			stepperCard
 		},
 		data() {
 			return {

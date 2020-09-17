@@ -54,8 +54,7 @@
 			allMoney: [Number, String],
 			addNum: [Number, String],
 			cartLists: {
-				type: Array,
-				default: []
+				type: Array
 			},
 			isOrder: {
 				type: Boolean,

@@ -144,7 +144,7 @@ function queue(hooks, data) {
   for (var i = 0; i < hooks.length; i++) {
     var hook = hooks[i];
     if (promise) {
-      promise = Promise.then(wrapperHook(hook));
+      promise = Promise.resolve(wrapperHook(hook));
     } else {
       var res = hook(data);
       if (isPromise(res)) {
@@ -456,7 +456,9 @@ function processArgs(methodName, fromArgs) {var argsOption = arguments.length > 
           toArgs[keyOption.name ? keyOption.name : key] = keyOption.value;
         }
       } else if (CALLBACKS.indexOf(key) !== -1) {
-        toArgs[key] = processCallback(methodName, fromArgs[key], returnValue);
+        if (isFn(fromArgs[key])) {
+          toArgs[key] = processCallback(methodName, fromArgs[key], returnValue);
+        }
       } else {
         if (!keepFromArgs) {
           toArgs[key] = fromArgs[key];
@@ -571,10 +573,6 @@ var extraApi = /*#__PURE__*/Object.freeze({
 
 
 var getEmitter = function () {
-  if (typeof getUniEmitter === 'function') {
-    /* eslint-disable no-undef */
-    return getUniEmitter;
-  }
   var Emitter;
   return function getUniEmitter() {
     if (!Emitter) {
@@ -661,6 +659,8 @@ Component = function Component() {var options = arguments.length > 0 && argument
 var PAGE_EVENT_HOOKS = [
 'onPullDownRefresh',
 'onReachBottom',
+'onAddToFavorites',
+'onShareTimeline',
 'onShareAppMessage',
 'onPageScroll',
 'onResize',
@@ -947,7 +947,18 @@ function getExtraValue(vm, dataPathsArray) {
       var propPath = dataPathArray[1];
       var valuePath = dataPathArray[3];
 
-      var vFor = dataPath ? vm.__get_value(dataPath, context) : context;
+      var vFor;
+      if (Number.isInteger(dataPath)) {
+        vFor = dataPath;
+      } else if (!dataPath) {
+        vFor = context;
+      } else if (typeof dataPath === 'string' && dataPath) {
+        if (dataPath.indexOf('#s#') === 0) {
+          vFor = dataPath.substr(3);
+        } else {
+          vFor = vm.__get_value(dataPath, context);
+        }
+      }
 
       if (Number.isInteger(vFor)) {
         context = value;
@@ -997,6 +1008,12 @@ function processEventExtra(vm, extra, event) {
         } else {
           if (dataPath === '$event') {// $event
             extraObj['$' + index] = event;
+          } else if (dataPath === 'arguments') {
+            if (event.detail && event.detail.__args__) {
+              extraObj['$' + index] = event.detail.__args__;
+            } else {
+              extraObj['$' + index] = [event];
+            }
           } else if (dataPath.indexOf('$event.') === 0) {// $event.target.value
             extraObj['$' + index] = vm.__get_value(dataPath.replace('$event.', ''), event);
           } else {
@@ -1077,6 +1094,15 @@ function isMatchEventType(eventType, optType) {
 
 }
 
+function getContextVm(vm) {
+  var $parent = vm.$parent;
+  // 父组件是 scoped slots 或者其他自定义组件时继续查找
+  while ($parent && $parent.$parent && ($parent.$options.generic || $parent.$parent.$options.generic || $parent.$scope._$vuePid)) {
+    $parent = $parent.$parent;
+  }
+  return $parent && $parent.$parent;
+}
+
 function handleEvent(event) {var _this = this;
   event = wrapper$1(event);
 
@@ -1109,12 +1135,8 @@ function handleEvent(event) {var _this = this;
         var methodName = eventArray[0];
         if (methodName) {
           var handlerCtx = _this.$vm;
-          if (
-          handlerCtx.$options.generic &&
-          handlerCtx.$parent &&
-          handlerCtx.$parent.$parent)
-          {// mp-weixin,mp-toutiao 抽象节点模拟 scoped slots
-            handlerCtx = handlerCtx.$parent.$parent;
+          if (handlerCtx.$options.generic) {// mp-weixin,mp-toutiao 抽象节点模拟 scoped slots
+            handlerCtx = getContextVm(handlerCtx) || handlerCtx;
           }
           if (methodName === '$emit') {
             handlerCtx.$emit.apply(handlerCtx,
@@ -1164,7 +1186,9 @@ var hooks = [
 'onShow',
 'onHide',
 'onError',
-'onPageNotFound'];
+'onPageNotFound',
+'onThemeChange',
+'onUnhandledRejection'];
 
 
 function parseBaseApp(vm, _ref3)
@@ -1498,7 +1522,7 @@ var uni = {};
 if (typeof Proxy !== 'undefined' && "mp-weixin" !== 'app-plus') {
   uni = new Proxy({}, {
     get: function get(target, name) {
-      if (target[name]) {
+      if (hasOwn(target, name)) {
         return target[name];
       }
       if (baseApi[name]) {
@@ -1697,9 +1721,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 12:
-/*!******************************************!*\
-  !*** D:/uni/bak365-order/store/store.js ***!
-  \******************************************/
+/*!**********************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/store/store.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1842,9 +1866,9 @@ store;exports.default = _default;
 /***/ }),
 
 /***/ 122:
-/*!***********************************************************!*\
-  !*** D:/uni/bak365-order/static/images/icon/backCard.png ***!
-  \***********************************************************/
+/*!***************************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/static/images/icon/backCard.png ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2804,9 +2828,9 @@ var index_esm = {
 /***/ }),
 
 /***/ 14:
-/*!***************************************!*\
-  !*** D:/uni/bak365-order/api/http.js ***!
-  \***************************************/
+/*!*******************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/api/http.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2885,9 +2909,9 @@ module.exports = {
 /***/ }),
 
 /***/ 141:
-/*!*******************************************************!*\
-  !*** D:/uni/bak365-order/utils/qqmap-wx-jssdk.min.js ***!
-  \*******************************************************/
+/*!***********************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/utils/qqmap-wx-jssdk.min.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2896,9 +2920,9 @@ function _classCallCheck(instance, Constructor) {if (!(instance instanceof Const
 /***/ }),
 
 /***/ 190:
-/*!*****************************************************!*\
-  !*** D:/uni/bak365-order/utils/codeChange/index.js ***!
-  \*****************************************************/
+/*!*********************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/utils/codeChange/index.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2928,9 +2952,9 @@ module.exports = {
 /***/ }),
 
 /***/ 191:
-/*!*******************************************************!*\
-  !*** D:/uni/bak365-order/utils/codeChange/barcode.js ***!
-  \*******************************************************/
+/*!***********************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/utils/codeChange/barcode.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -3342,9 +3366,9 @@ module.exports = {
 /***/ }),
 
 /***/ 192:
-/*!******************************************************!*\
-  !*** D:/uni/bak365-order/utils/codeChange/qrcode.js ***!
-  \******************************************************/
+/*!**********************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/utils/codeChange/qrcode.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -4836,13 +4860,7 @@ var uid = 0;
  * directives subscribing to it.
  */
 var Dep = function Dep () {
-  // fixed by xxxxxx (nvue vuex)
-  /* eslint-disable no-undef */
-  if(typeof SharedObject !== 'undefined'){
-    this.id = SharedObject.uid++;
-  } else {
-    this.id = uid++;
-  }
+  this.id = uid++;
   this.subs = [];
 };
 
@@ -4879,7 +4897,7 @@ Dep.prototype.notify = function notify () {
 // can be evaluated at a time.
 // fixed by xxxxxx (nvue shared vuex)
 /* eslint-disable no-undef */
-Dep.SharedObject = typeof SharedObject !== 'undefined' ? SharedObject : {};
+Dep.SharedObject = {};
 Dep.SharedObject.target = null;
 Dep.SharedObject.targetStack = [];
 
@@ -9729,6 +9747,15 @@ function cloneWithData(vm) {
     ret[key] = vm[key];
     return ret
   }, ret);
+
+  // vue-composition-api
+  var rawBindings = vm.__secret_vfa_state__ && vm.__secret_vfa_state__.rawBindings;
+  if (rawBindings) {
+    Object.keys(rawBindings).forEach(function (key) {
+      ret[key] = vm[key];
+    });
+  }
+  
   //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
   Object.assign(ret, vm.$mp.data || {});
   if (
@@ -9933,7 +9960,7 @@ function getTarget(obj, path) {
   return getTarget(obj[key], parts.slice(1).join('.'))
 }
 
-function internalMixin(Vue ) {
+function internalMixin(Vue) {
 
   Vue.config.errorHandler = function(err, vm, info) {
     Vue.util.warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
@@ -10081,7 +10108,10 @@ var LIFECYCLE_HOOKS$1 = [
     'onShow',
     'onHide',
     'onUniNViewMessage',
+    'onPageNotFound',
+    'onThemeChange',
     'onError',
+    'onUnhandledRejection',
     //Page
     'onLoad',
     // 'onShow',
@@ -10091,6 +10121,8 @@ var LIFECYCLE_HOOKS$1 = [
     'onPullDownRefresh',
     'onReachBottom',
     'onTabItemTap',
+    'onAddToFavorites',
+    'onShareTimeline',
     'onShareAppMessage',
     'onResize',
     'onPageScroll',
@@ -10190,9 +10222,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 309:
-/*!*************************************************************************!*\
-  !*** D:/uni/bak365-order/components_uni/gaoyia-parse/libs/html2json.js ***!
-  \*************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/components_uni/gaoyia-parse/libs/html2json.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10463,9 +10495,9 @@ html2json;exports.default = _default;
 /***/ }),
 
 /***/ 310:
-/*!*************************************************************************!*\
-  !*** D:/uni/bak365-order/components_uni/gaoyia-parse/libs/wxDiscode.js ***!
-  \*************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/components_uni/gaoyia-parse/libs/wxDiscode.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10668,9 +10700,9 @@ function urlToHttpUrl(url, domain) {
 /***/ }),
 
 /***/ 311:
-/*!**************************************************************************!*\
-  !*** D:/uni/bak365-order/components_uni/gaoyia-parse/libs/htmlparser.js ***!
-  \**************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/components_uni/gaoyia-parse/libs/htmlparser.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10835,9 +10867,9 @@ HTMLParser;exports.default = _default;
 /***/ }),
 
 /***/ 331:
-/*!*************************************************************!*\
-  !*** D:/uni/bak365-order/components_uni/uni-icons/icons.js ***!
-  \*************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/components_uni/uni-icons/icons.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10941,9 +10973,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!**************************************!*\
-  !*** D:/uni/bak365-order/pages.json ***!
-  \**************************************/
+/*!******************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/pages.json ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10952,9 +10984,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 402:
-/*!***************************************************************!*\
-  !*** D:/uni/bak365-order/components_uni/uni-calendar/util.js ***!
-  \***************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/components_uni/uni-calendar/util.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11290,9 +11322,9 @@ Calendar;exports.default = _default;
 /***/ }),
 
 /***/ 403:
-/*!*******************************************************************!*\
-  !*** D:/uni/bak365-order/components_uni/uni-calendar/calendar.js ***!
-  \*******************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/components_uni/uni-calendar/calendar.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11847,9 +11879,9 @@ calendar;exports.default = _default;
 /***/ }),
 
 /***/ 8:
-/*!******************************************!*\
-  !*** D:/uni/bak365-order/utils/utils.js ***!
-  \******************************************/
+/*!**********************************************************************************!*\
+  !*** D:/newProject/hy-admin-card/admin-shoppingMall/bak365-order/utils/utils.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

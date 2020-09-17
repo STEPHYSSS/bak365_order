@@ -1,12 +1,6 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/indexVip/index",
-			"style": {
-				"navigationBarTitleText": "会员中心"
-			}
-		},
-		{
 			"path": "pages/indexHomePage/index",
 			"style": {
 				"navigationBarTitleText": "欢迎光临"
@@ -44,7 +38,12 @@
 				"navigationBarTitleText": "懒人凑团"
 			}
 		},
-
+		{
+			"path": "pages/indexVip/index",
+			"style": {
+				"navigationBarTitleText": "会员中心"
+			}
+		},
 		{
 			"path": "pages/indexCanteen/collage/explain",
 			"style": {

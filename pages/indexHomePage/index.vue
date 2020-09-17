@@ -32,9 +32,9 @@
 			// 		this.getList()
 			// 	})
 			// } else {
-				this.$showLoads(0, '') //加载
-				this.getList()
-			// }
+			// 	this.$showLoads(0, '') //加载
+			// 	this.getList()
+			// }//打包是记得开放
 		},
 		methods: {
 			getList() {
