@@ -93,10 +93,13 @@
 				return utils.setDecimal(val)
 			},
 			getInfo() {
+				console.log('接口');
 				this.provider = app.globalData.provider
 				var _this = this
+				console.log(_this.ProdNo);
+				console.log(this.ProdNo);
 				APIList.api('ProdItem.aspx', {
-					ProdNo: this.ProdNo || ''
+					ProdNo: _this.ProdNo
 				}).then(D => {
 					this.goodInfo = D
 
@@ -236,6 +239,7 @@
 		},
 		onLoad: function(options) {
 			this.ProdNo = options.ProdNo
+			this.getInfo()
 			const {
 				windowWidth,
 				windowHeight
@@ -243,6 +247,7 @@
 			this.windowWidth = windowWidth
 
 			if (!app.globalData.shopNo || !app.globalData.isPack) {
+				console.log('没有门店');
 				//没有门店，跳到门店列表
 				uni.reLaunch({
 					url: '/pages/indexCanteen/changeStore/index?goodInfo=' + this.ProdNo
@@ -255,6 +260,7 @@
 
 				})
 			} else {
+				console.log('获取数据');
 				this.getInfo()
 			}
 		},

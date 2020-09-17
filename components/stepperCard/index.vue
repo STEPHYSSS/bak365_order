@@ -2,7 +2,7 @@
 	<view class="sterperCard-style">
 		<!-- v-if="!isCollage&&!isCollageInfo" -->
 		<div>
-			<text class="icon stepperStyle fontColor" @click="clickTag">&#xe616;</text>
+			<text v-if="!newItemData.showStepper" class="icon stepperStyle fontColor" @click="clickTag">&#xe616;</text>
 			<!-- 商品数量（StockQty）等于0 的时候代表售罄了 -->
 			<text v-if="!newItemData.showStepper&&newItemData.StockQty<=0" class="icon stepperStyle fontColorGray" @click="clickTagEmpty">&#xe616;</text>
 			<stepper v-if="newItemData.showStepper" @stepperNum="stepperNumChange" :numData="newItemData.num" :currentDisabled="disabled"
@@ -197,10 +197,11 @@
 				return utils.setDecimal(val)
 			},
 			stepperChange(stepperParam) {
+				console.log(stepperParam);
 				// 点击加入购物车应该展示下面的购物车栏
 				console.log(stepperParam,'what')
 				// console.log(this.recordFlavor, 2222)
-				// console.log(this.recordParts, 1111)
+				console.log(this.recordParts, 1111)
 
 				// 获取规格名称数组
 				var PartsAllSale = 0
@@ -224,8 +225,8 @@
 
 				newItemData.recordFlavor = flavorArr
 				// 改变数量
-				newItemData.num = stepperParam && !(stepperParam instanceof Object) ? stepperParam : newItemData.num
-
+				newItemData.num = !(stepperParam instanceof Object) ? stepperParam : newItemData.num
+				console.log(newItemData);
 				arr.itemData = newItemData
 				arr.itemData.prodType = 1
 				arr.recordParts = this.recordParts
@@ -273,6 +274,8 @@
 				this.newItemData.num = val
 			},
 			clickTag() {
+				console.log(this.itemData);
+				console.log(this.newItemData);
 				// 点击的购物车按钮  商品分为单规格和多规格
 				APIList.api('ProdPartsOrTast.aspx', {
 					ProdNo: this.newItemData.ProdNo,
@@ -293,7 +296,7 @@
 						// 配件带 2 ，区分商品
 						D.prodType = 2
 					})
-
+					console.log('牛奶');
 					if (Parts.length > 0 || Tast.length > 0 || Specs.length > 0) {
 						// 判断为是多选
 						this.showPopup = true
@@ -313,7 +316,7 @@
 						// this.data.newItemData.showStepper = false
 					} else {
 						if (!this.isCollage) {
-						
+							console.log('加入购物车');
 							// 直接加入购物车
 							this.$emit('setShowStepper', true)
 							this.newItemData.showStepper = true
@@ -414,7 +417,13 @@
 				if (val) {
 					this.clickTag()
 				}
-			}
+			},
+			itemData: {
+				handler(val) {
+					console.log(val);
+				},
+				deep: true,
+			},
 		}
 	}
 

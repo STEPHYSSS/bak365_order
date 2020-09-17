@@ -99,6 +99,7 @@
 				this.$emit('mycurrentPage', e)
 			},
 			setShowStepper(bool) {
+				console.log(bool);
 				this.$emit('setShowStepper', bool)
 			},
 			clickGoodsBox(ProdNo, CateNo) {

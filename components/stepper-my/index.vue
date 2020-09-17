@@ -47,6 +47,7 @@
 				// 	// 默认值的时候不可以执行
 				// 	return
 				// }
+				console.log('加减执行', goodsNum);
 				this.$emit('stepperNum', goodsNum)
 			}
 		}

@@ -47,7 +47,6 @@
 			<span class="icon customer-service-style" :style="{'color': itemColor,
 			'border': '1px solid'+ itemColor}">&#xe60a;</span>
 		</button>
-		<bottomSubmit ></bottomSubmit>
 	</view>
 </template>
 
@@ -58,15 +57,13 @@
 	import noData from '@/components/nodeData/index.vue'
 	import goodsBox from '@/components/goodsBox/index.vue'
 	import stepperCard from '@/components/stepperCard/index.vue'
-import submitBar from "@/components/submit-bar/index.vue"
 	var utils = require('@/utils/utils.js')
 	export default {
 		components: {
 			bottomSubmit,
 			noData,
 			goodsBox,
-			stepperCard,
-			submitBar,
+			stepperCard
 		},
 		data() {
 			return {
@@ -180,6 +177,7 @@ import submitBar from "@/components/submit-bar/index.vue"
 				this.allMoney = cartListArr.length > 0 ? parseFloat(this.allMoney.toFixed(2)) : 0
 			},
 			setShowStepper(bool, index) {
+				console.log(this.arrayList[index], '商品');
 				this.$set(this.arrayList[index], 'showStepper', bool)
 			},
 			changeMax(index) {
