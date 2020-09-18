@@ -18,7 +18,7 @@
 				</text>
 			</view>
 			<!-- v-if="loading" 打包的时候记得加入到 :class="'btnMy'+colorIndex" 后面作为条件判断-->
-			<view style="padding:10px 10px;margin-top:20px;" :class="'btnMy'+colorIndex">
+			<view style="padding:10px 10px;margin-top:20px;" :class="'btnMy'+colorIndex" v-if="loading">
 				<button size="large" @click="startOrder">
 					<view class="view-btn-style">
 						<image class="btn-style-img" src="../../static/images/icon/yongcan.png"></image>
@@ -30,7 +30,7 @@
 				</button>
 			</view>
 			<!-- v-if="loading" 同上 -->
-			<view class="box-style-view" >
+			<view class="box-style-view" v-if="loading">
 				<view v-if="isShowCode==='1'" class="box-style-view-chil" @click="clickMyCode">
 					<text class="icon vip-card-style" :style="{color:colorItem}">&#xe62b;</text>
 					<view class="vip-card-font">会员码</view>
@@ -141,8 +141,8 @@
 				colorItem: app.globalData.itemColor,
 				provider: app.globalData.provider,
 				location: {
-					Latitude: 30.49984,
-					Longitude: 114.34253
+					// Latitude: 30.49984,
+					// Longitude: 114.34253
 				},
 				clickShow: false,
 				radio: '1',
@@ -226,11 +226,11 @@
 			},
 			startOrder() {
 				let a = this.modeChange.LogisticsDistribution //配送
-				// let b = this.modeChange.OrderEatInStore //堂食//打包的时候记得打开
+				let b = this.modeChange.OrderEatInStore //堂食//打包的时候记得打开
 				let c = this.modeChange.OrderEatPackAway //打包
 
 				// let a = '1'
-				let b = '1'
+				// let b = '1'
 				// let c = '1'
 				let setModeIfVal = setModeIf(a, b, c) //是否只有一种选择几餐方式  true--不止一种
 
@@ -345,8 +345,8 @@
 			this.ActiveID = options.options
 			// 只执行一遍
 			// console.log(options.q)
-			// var httpUrl = options.q ? decodeURIComponent(options.q) : ''
-			var httpUrl = 'https://we.bak365.net/SmallProgramSaleOrder/Mobile/SmallProgramIndexLink.aspx?ShopNo=0600&TableNumber=2'
+			var httpUrl = options.q ? decodeURIComponent(options.q) : ''
+			// var httpUrl = 'https://we.bak365.net/SmallProgramSaleOrder/Mobile/SmallProgramIndexLink.aspx?ShopNo=0600&TableNumber=2'
 			var objParam = {}
 			if (httpUrl) {
 				//截取
@@ -380,56 +380,56 @@
 
 			if (options.currentShop) {
 				//附近门店返回过来的
-				// this.currentStore = JSON.parse(options.currentShop)//暂时注释
-				// this.shopNo = this.currentStore.ShopNo //暂时注释
+				this.currentStore = JSON.parse(options.currentShop)//暂时注释
+				this.shopNo = this.currentStore.ShopNo //暂时注释
 				// uni.setStorageSync('shopLocation', {
 				// 	latitude: this.currentStore.Latitude || '',
 				// 	longitude: this.currentStore.Longitude || ''
 				// })
-				// 打包的时候注释掉
-				uni.setStorageSync('shopLocation', {
-					latitude: this.currentStore.Latitude || '',
-					longitude: this.currentStore.Longitude || ''
-				})
+				打包的时候注释掉
+				// uni.setStorageSync('shopLocation', {
+				// 	latitude: this.currentStore.Latitude || '',
+				// 	longitude: this.currentStore.Longitude || ''
+				// })
 				// uni.setStorageSync('shopLocationName', this.currentStore.ShopName)
 			}
-			// uni.removeStorageSync('shopLocation'); //清除之前选中门店信息
-			// uni.getLocation({
-			// 	type: 'wgs84',
-			// 	success(res) {
-			// 		const latitude = res.latitude
-			// 		const longitude = res.longitude
-			// 		uni.setStorageSync('location', {
-			// 			latitude: res.latitude,
-			// 			longitude: res.longitude
-			// 		})
-			// 		_this.location = {
-			// 			Latitude: res.latitude,
-			// 			Longitude: res.longitude
-			// 		}
+			uni.removeStorageSync('shopLocation'); //清除之前选中门店信息
+			uni.getLocation({
+				type: 'wgs84',
+				success(res) {
+					const latitude = res.latitude
+					const longitude = res.longitude
+					uni.setStorageSync('location', {
+						latitude: res.latitude,
+						longitude: res.longitude
+					})
+					_this.location = {
+						Latitude: res.latitude,
+						Longitude: res.longitude
+					}
 
-			// 	},
-			// 	fail() {
-			// 		// app.ShowTip("未授权位")
-			// 		// wx.setStorageSync('location', {
-			// 		// 	latitude: '',
-			// 		// 	longitude: ''
-			// 		// })
-			// 	},
-			// 	complete() {
-			// 		if (!app.globalData.openID) {
-			// 			_this.$store.dispatch('Login').then(D => {
-			// 				getDataOwn(app, _this)
+				},
+				fail() {
+					// app.ShowTip("未授权位")
+					// wx.setStorageSync('location', {
+					// 	latitude: '',
+					// 	longitude: ''
+					// })
+				},
+				complete() {
+					if (!app.globalData.openID) {
+						_this.$store.dispatch('Login').then(D => {
+							getDataOwn(app, _this)
 
-			// 				_this.isweixin = app.globalData.provider === 'weixin' ? true : false
-			// 			})
-			// 		} else {
-			// 			getDataOwn(app, _this)
+							_this.isweixin = app.globalData.provider === 'weixin' ? true : false
+						})
+					} else {
+						getDataOwn(app, _this)
 
-			// 			_this.isweixin = app.globalData.provider === 'weixin' ? true : false
-			// 		}
-			// 	}
-			// })//打包的时候打开
+						_this.isweixin = app.globalData.provider === 'weixin' ? true : false
+					}
+				}
+			})//打包的时候打开
 
 		},
 		onShow() {

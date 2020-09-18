@@ -2,9 +2,9 @@
   "navigationBarTitleText": "拼团",
   "enablePullDownRefresh": true,
   "usingComponents": {
+    "u-parse": "/components_uni/gaoyia-parse/parse",
     "stepper-card": "/components/stepperCard/index",
     "bottom-submit": "/components/bottomSubmit/index",
-    "u-parse": "/components_uni/gaoyia-parse/parse",
     "btn-service": "/components/customerService/index",
     "uni-countdown": "/components_uni/uni-countdown/uni-countdown",
     "wuc-tab": "/components_uni/wuc-tab/wuc-tab",

@@ -3,7 +3,7 @@
   "usingComponents": {
     "stepper-card": "/components/stepperCard/index",
     "bottom-submit": "/components/bottomSubmit/index",
-    "u-parse": "/components_uni/gaoyia-parse/parse",
+    "u-parse": "/components/u-parse/u-parse",
     "btn-service": "/components/customerService/index"
   }
 }

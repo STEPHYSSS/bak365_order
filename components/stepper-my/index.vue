@@ -3,7 +3,7 @@
 	<!-- <van-stepper value="{{ numData }}" catchtap="catchtap"  catch:change="onChange" plus-class="plus-stepper" minus-class="plus-stepper" input-class="{{numData!==0?'plus-input':'plus-inputNode'}}" min="0"
 	   disable-input show-minus="{{numData!==0}}" disabled="{{disabled}}" custom-class="custom-class"/> -->
 	<view>
-		<uni-number-box :value="numData" @change="onChange" :min="0" :max="maxData" :key="indexKey" :disabledright="currentDisabled"
+		<uni-number-box :value="numData" @change="onChange" :min="1" :max="maxData" :key="indexKey" :disabledright="currentDisabled"
 		 :disabledAll="disabledAll"></uni-number-box>
 	</view>
 </template>
@@ -15,7 +15,7 @@
 		props: {
 			numData: {
 				type: Number,
-				value: 0
+				value: 1
 			},
 			maxData: {
 				type: Number,
@@ -45,7 +45,7 @@
 			onChange(goodsNum) {
 				// if (e == this.numData) {
 				// 	// 默认值的时候不可以执行
-				// 	return
+				// 	return	
 				// }
 				console.log('加减执行', goodsNum);
 				this.$emit('stepperNum', goodsNum)

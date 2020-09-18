@@ -103,7 +103,7 @@
 		height: $btn-height;
 		line-height: $btn-height;
 		position: fixed;
-		bottom: 50px;
+		bottom: 0;
 		left: 0;
 		z-index: 10;
 		width: 100%;

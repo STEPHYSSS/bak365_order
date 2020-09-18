@@ -18,10 +18,10 @@
 					if (providerNew === 'alipay') {
 						extConfig = my.getExtConfigSync();
 					} else {
-						// extConfig = wx.getExtConfigSync();
-						extConfig = {
-							appID:"wx5349c5e963833f38"
-						}//打包的时候删掉
+						extConfig = wx.getExtConfigSync();
+						// extConfig = {
+						// 	appID:"wx5349c5e963833f38"
+						// }//打包的时候删掉
 					}
 					if (extConfig) {
 						if (extConfig.appID) {
@@ -35,12 +35,12 @@
 		onHide: function() {},
 		globalData: {
 			appID: '',
-			OpenID: 'ob3yr5W8TWmoOi-i_N7c5f-CXmQQ',//打包的时候删掉
+			OpenID: '',//打包的时候删掉
 			// requestUrl: 'https://we.bak365.net/SmallProgramSaleTest/Mobile/',
 			requestUrl: 'https://we.bak365.net/SmallProgramSaleOrder/Mobile/',
 			itemColor: "#D82F37",
 			tableNumber: '',
-			shopNo: '7701', //7701 //0803
+			shopNo: '', //7701 //0803
 			isPack: '',
 			// 当前颜色用序号来控制 1 代表什么颜色，2代表什么颜色，以此类推
 			colorIndex: '1',

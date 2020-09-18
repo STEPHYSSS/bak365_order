@@ -26,15 +26,15 @@
 			}
 		},
 		onLoad() {
-			// if (!app.globalData.openID) {
-			// 	this.$showLoads(0, '') //加载
-			// 	this.$store.dispatch('Login').then(D => {
-			// 		this.getList()
-			// 	})
-			// } else {
-			// 	this.$showLoads(0, '') //加载
-			// 	this.getList()
-			// }//打包是记得开放
+			if (!app.globalData.openID) {
+				this.$showLoads(0, '') //加载
+				this.$store.dispatch('Login').then(D => {
+					this.getList()
+				})
+			} else {
+				this.$showLoads(0, '') //加载
+				this.getList()
+			}//打包是记得开放
 		},
 		methods: {
 			getList() {

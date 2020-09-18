@@ -103,7 +103,7 @@
 		},
 		onShow: function() {
 			// app.globalData.isPack = 2
-			this.getList()//打包记得删除
+			// this.getList()//打包记得删除
 			if (!app.globalData.isPack) {
 				uni.redirectTo({
 					url: "../indexMain/index"

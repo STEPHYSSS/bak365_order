@@ -33,7 +33,9 @@
 					<text class="title">----商品详情----</text>
 				</view>
 				<view class="contentStyle">
-					<u-parse :content="article"></u-parse>
+					<uParse :content="article"/>
+					<!-- <u-parse :content="article" @navigate="navigate"></u-parse> -->
+					<!-- <uParse :content="article" :imageUrls="imageUrls" noData="内容为空" /> -->
 					<!-- @preview="preview" @navigate="navigate" -->
 				</view>
 			</view>
@@ -48,7 +50,8 @@
 	import APIList from '@/api/http.js'
 	import stepperCard from '@/components/stepperCard/index.vue'
 	import bottomSubmit from '@/components/bottomSubmit/index.vue'
-	import uParse from '@/components_uni/gaoyia-parse/parse.vue'
+	// import uParse from '@/components_uni/gaoyia-parse/parse.vue'
+	import uParse from '@/components/u-parse/u-parse.vue'
 	import btnService from '@/components/customerService/index.vue'
 
 	let app = getApp()
@@ -93,17 +96,25 @@
 				return utils.setDecimal(val)
 			},
 			getInfo() {
-				console.log('接口');
 				this.provider = app.globalData.provider
 				var _this = this
-				console.log(_this.ProdNo);
-				console.log(this.ProdNo);
 				APIList.api('ProdItem.aspx', {
 					ProdNo: _this.ProdNo
 				}).then(D => {
 					this.goodInfo = D
-
+						// https://we.bak365.net/SmallProgramSaleOrder
 					this.article = D.FeaturesHtmlInfo
+					var arr = this.article.split('<img')
+					var data = arr.map(val => val.replace('../', 'https://we.bak365.net/SmallProgramSaleOrder/'));
+					var a = data.map(val => {
+						if (val.indexOf('src') !== -1) {
+							return("<img" + val);
+						} else {
+							return val;
+						}
+					})
+					this.article = a.join('');
+					// console.log(this.article);
 					var cartList = uni.getStorageSync('cartList')
 					// console.log(cartList, 'cartList')
 					var allNum = 0 //总的钱数
@@ -275,7 +286,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss"> 
 	.goodInfo-style {
 		background: #fff;
 		padding-bottom: 60px;

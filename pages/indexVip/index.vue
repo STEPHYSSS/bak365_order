@@ -1,4 +1,5 @@
 <template>
+	<!-- v-if="dataList.Code"  待会放在view class="indexVip"后面-->
 	<view class="indexVip" v-if="dataList.Code">
 		<view class="vipTop" :style="{'background': `url(${dataList.CardImg})`,'backgroundSize':'cover'}">
 
@@ -231,6 +232,7 @@
 			text-align: center;
 			font-size: 14px;
 			flex: 1;
+			padding: 5px 0 6px 0;
 		}
 
 		.idStyle {
@@ -239,9 +241,11 @@
 		}
 
 		.vanRow {
-			padding-bottom: 16px;
+			// padding-bottom: 16px;
 			transform: translateY(55px);
 			display: flex;
+			box-sizing: border-box;
+			background-color: #CCCCCC;
 		}
 
 		.vipBottom {

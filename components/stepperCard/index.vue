@@ -1,7 +1,7 @@
 <template>
 	<view class="sterperCard-style">
 		<!-- v-if="!isCollage&&!isCollageInfo" -->
-		<div>
+		<div v-if="!isCollage&&!isCollageInfo">
 			<text v-if="!newItemData.showStepper" class="icon stepperStyle fontColor" @click="clickTag">&#xe616;</text>
 			<!-- 商品数量（StockQty）等于0 的时候代表售罄了 -->
 			<text v-if="!newItemData.showStepper&&newItemData.StockQty<=0" class="icon stepperStyle fontColorGray" @click="clickTagEmpty">&#xe616;</text>
@@ -184,24 +184,21 @@
 						.StockQty) -
 					Number(this.itemData.ActiveSaleCount) : Number(this.itemData.StockQty))
 			this.newItemData.num = 1
+			console.log(this.newItemData.num, '显示加减组件');
 		},
 		computed: {
 			newItemData(){
-				console.log(this.itemData,8888889)
+				// console.log(this.itemData,8888889)
 				return this.itemData
 			}
 		},
 		methods: {
 			setDecimalFun(val) {
-				console.log(val,'SalePrice')
+				// console.log(val,'SalePrice')
 				return utils.setDecimal(val)
 			},
 			stepperChange(stepperParam) {
-				console.log(stepperParam);
 				// 点击加入购物车应该展示下面的购物车栏
-				console.log(stepperParam,'what')
-				// console.log(this.recordFlavor, 2222)
-				console.log(this.recordParts, 1111)
 
 				// 获取规格名称数组
 				var PartsAllSale = 0
@@ -226,7 +223,7 @@
 				newItemData.recordFlavor = flavorArr
 				// 改变数量
 				newItemData.num = !(stepperParam instanceof Object) ? stepperParam : newItemData.num
-				console.log(newItemData);
+				// console.log(newItemData);
 				arr.itemData = newItemData
 				arr.itemData.prodType = 1
 				arr.recordParts = this.recordParts
@@ -360,7 +357,7 @@
 				getDataArrr(this, 'parts', 'recordParts', e)
 			},
 			stepperNumChange(e) {
-				console.log(e,'从子组件中得到的数据')
+				// console.log(e,'从子组件中得到的数据')
 				this.stepperChange(e)
 			},
 			clickTagEmpty() {
@@ -412,6 +409,12 @@
 		watch: {
 			'newItemData.SalePrice'(val) {
 				this.SalePrice = this.newItemData.SalePrice
+			},
+			'newItemData.showStepper'(val) {
+				this.newItemData.num = val ? 1 : 0;
+			},
+			showPopup(val) {
+				this.newItemData.num = val ? 1 : 0;
 			},
 			'isShowCode'(val) {
 				if (val) {

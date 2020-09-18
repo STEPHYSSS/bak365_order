@@ -22,7 +22,7 @@
 			</view>
 
 				 <!-- v-if="!isOrder&&!isSearch" -->
-			<view class="stepperStyle">
+			<view class="stepperStyle" v-if="!isOrder&&!isSearch">
 				<stepper-card :itemData="itemData" @mycurrentPage="mycurrentPage" @setShowStepper="setShowStepper"></stepper-card>
 			</view>
 		</view>
@@ -99,7 +99,7 @@
 				this.$emit('mycurrentPage', e)
 			},
 			setShowStepper(bool) {
-				console.log(bool);
+				// console.log(bool);
 				this.$emit('setShowStepper', bool)
 			},
 			clickGoodsBox(ProdNo, CateNo) {

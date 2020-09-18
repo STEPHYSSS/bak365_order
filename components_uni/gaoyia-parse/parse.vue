@@ -130,15 +130,54 @@
 					chars: charsHandler
 				};
 				let results = HtmlToJson(parseData, customHandler, imageProp, this);
-
-				this.imageUrls = results.imageUrls;
+				this.imageUrls = results.imageUrls;				
 				// this.nodes = results.nodes;
-				this.nodes = [];
-				results.nodes.forEach((item) => {
-					setTimeout(() => {
-						this.nodes.push(item)
-					}, 0);
-				})
+				// this.nodes = [];
+				// results.nodes.forEach((item) => {
+				// 	setTimeout(() => {
+				// 		this.nodes.push(item)
+				// 	}, 0);
+				// })
+				
+				// this.imageUrls = results.imageUrls;
+				 // let img  = results.imageUrls
+				 // let obj2 = {}
+				 // img.forEach((item,index) => {
+					// 	obj2 = item.replace(/../, "https://we.bak365.net/SmallProgramSaleOrder")
+					// 	this.imageUrls.push(obj2)
+				 // });
+				 //  let nodes = results.nodes				  
+				 //  nodes.forEach(item =>{
+					// item.nodes.forEach(item2=>{
+					// 	let attrSrc = item2.attr.src;
+					// 	if(attrSrc){
+					// 		item2.attr.src = attrSrc.replace(/../, "https://we.bak365.net/SmallProgramSaleOrder")
+					// 		console.log(item2.attr.src)
+					// 	}
+						
+					//    // item2.attr.src = attrSrc.replace(/../, "https://we.bak365.net/SmallProgramSaleOrder")
+				 //    })
+				 //  })
+				 //  console.log(nodes,'重组数据')
+				 let nodes = results.nodes;
+				 console.log(nodes,'===')
+				 nodes.forEach(item => {
+				 	item.nodes.forEach(item2 => {
+				 		if(item2.tag === 'img'){
+				 			let attrSrc = item2.attr.src;
+				 			item2.attr.src = attrSrc.replace(/../, "https://we.bak365.net/SmallProgramSaleOrder")
+				 		}
+				 		if(item2.nodes){
+				 			item2.nodes.forEach(item3 =>{
+				 				if(item3.tag === 'img'){
+				 					let attrSrc2 = item3.attr.src; 
+				 					item3.attr.src = attrSrc2.replace(/../, "https://we.bak365.net/SmallProgramSaleOrder")
+				 				}
+				 			})
+				 		}
+				 	})
+				 })
+				
 			},
 			getWidth() {
 				return new Promise((res, rej) => {
@@ -174,6 +213,7 @@
 				this.$emit('navigate', href, $event);
 			},
 			preview(src, $event) {
+				
 				if (!this.imageUrls.length || typeof this.imgOptions === 'boolean') {
 
 				} else {
@@ -204,7 +244,7 @@
 		},
 		watch: {
 			content(){
-				this.setHtml()
+				this.setHtml();
 			}
 			// content: {
 			// 	handler: function(newVal, oldVal) {
@@ -217,3 +257,6 @@
 		}
 	};
 </script>
+<style>
+	@import url("./parse.css");
+</style>
