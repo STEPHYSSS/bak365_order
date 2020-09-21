@@ -36,7 +36,8 @@
 			},
 			noData: {
 				type: String,
-				default: '<div style="color: red;">数据不能为空</div>',
+				default: '',
+				// default: '<div style="color: red;">数据不能为空</div>',
 			},
 			startHandler: {
 				type: Function,

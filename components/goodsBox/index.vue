@@ -102,6 +102,7 @@
 				// console.log(bool);
 				this.$emit('setShowStepper', bool)
 			},
+			// 商品详情页
 			clickGoodsBox(ProdNo, CateNo) {
 				// itemData.ProdNo,itemData.CateNo
 				if (CateNo && !this.isOrder) {

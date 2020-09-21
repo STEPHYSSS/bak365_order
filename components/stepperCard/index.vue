@@ -271,8 +271,8 @@
 				this.newItemData.num = val
 			},
 			clickTag() {
-				console.log(this.itemData);
-				console.log(this.newItemData);
+				// console.log(this.itemData);
+				// console.log(this.newItemData);
 				// 点击的购物车按钮  商品分为单规格和多规格
 				APIList.api('ProdPartsOrTast.aspx', {
 					ProdNo: this.newItemData.ProdNo,
@@ -293,7 +293,7 @@
 						// 配件带 2 ，区分商品
 						D.prodType = 2
 					})
-					console.log('牛奶');
+					// console.log('牛奶');
 					if (Parts.length > 0 || Tast.length > 0 || Specs.length > 0) {
 						// 判断为是多选
 						this.showPopup = true
@@ -313,7 +313,7 @@
 						// this.data.newItemData.showStepper = false
 					} else {
 						if (!this.isCollage) {
-							console.log('加入购物车');
+							// console.log('加入购物车');
 							// 直接加入购物车
 							this.$emit('setShowStepper', true)
 							this.newItemData.showStepper = true

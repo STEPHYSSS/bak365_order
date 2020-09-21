@@ -58,6 +58,23 @@
 				modeChangeNum: {},
 			}
 		},
+		onLoad(option) {
+			// console.log(option.isNearby)
+			this.isNearby = option.isNearby || false
+			this.isCardPay = option.isCardPay || false
+			this.indexCan = option.indexCan || false
+			this.isHome = option.homePage || false
+			this.isGoodInfo = option.goodInfo || false
+		},
+		created() {
+			if (!app.globalData.openID) {
+				this.$store.dispatch('Login').then(D => {
+					this.getList()
+				})
+			} else {
+				this.getList()
+			}
+		},
 		methods: {
 			getList() {
 				this.$showLoads(0)
@@ -192,24 +209,7 @@
 					}
 				}
 			}
-		},
-		onLoad(option) {
-			// console.log(option.isNearby)
-			this.isNearby = option.isNearby || false
-			this.isCardPay = option.isCardPay || false
-			this.indexCan = option.indexCan || false
-			this.isHome = option.homePage || false
-			this.isGoodInfo = option.goodInfo || false
-		},
-		created() {
-			if (!app.globalData.openID) {
-				this.$store.dispatch('Login').then(D => {
-					this.getList()
-				})
-			} else {
-				this.getList()
-			}
-		},
+		},		
 		onShow: function() {}
 	}
 </script>

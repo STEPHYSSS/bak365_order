@@ -19,9 +19,6 @@
 						extConfig = my.getExtConfigSync();
 					} else {
 						extConfig = wx.getExtConfigSync();
-						// extConfig = {
-						// 	appID:"wx5349c5e963833f38"
-						// }//打包的时候删掉
 					}
 					if (extConfig) {
 						if (extConfig.appID) {
@@ -35,7 +32,7 @@
 		onHide: function() {},
 		globalData: {
 			appID: '',
-			OpenID: '',//打包的时候删掉
+			OpenID: '',
 			// requestUrl: 'https://we.bak365.net/SmallProgramSaleTest/Mobile/',
 			requestUrl: 'https://we.bak365.net/SmallProgramSaleOrder/Mobile/',
 			itemColor: "#D82F37",

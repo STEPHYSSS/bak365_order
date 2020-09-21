@@ -3,7 +3,7 @@
 	<!-- <van-stepper value="{{ numData }}" catchtap="catchtap"  catch:change="onChange" plus-class="plus-stepper" minus-class="plus-stepper" input-class="{{numData!==0?'plus-input':'plus-inputNode'}}" min="0"
 	   disable-input show-minus="{{numData!==0}}" disabled="{{disabled}}" custom-class="custom-class"/> -->
 	<view>
-		<uni-number-box :value="numData" @change="onChange" :min="1" :max="maxData" :key="indexKey" :disabledright="currentDisabled"
+		<uni-number-box :value="numData" @change="onChange" :min="0" :max="maxData" :key="indexKey" :disabledright="currentDisabled"
 		 :disabledAll="disabledAll"></uni-number-box>
 	</view>
 </template>

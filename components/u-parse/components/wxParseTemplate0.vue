@@ -32,7 +32,6 @@
 			<!--img类型-->
 			<block v-else-if="node.tag == 'img'">
 				<wx-parse-img :node="node" />
-				pajgiejgie
 			</block>
 
 			<!--a类型-->

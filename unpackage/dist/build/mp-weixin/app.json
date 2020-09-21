@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/indexMain/index",
     "pages/indexHomePage/index",
     "pages/indexCanteen/collage/index",
     "pages/indexOrder/oderList/index",
@@ -8,7 +7,8 @@
     "pages/indexCanteen/collage/info",
     "pages/indexCanteen/collage/collageList",
     "pages/indexVip/index",
-    "pages/indexCanteen/collage/explain",    
+    "pages/indexCanteen/collage/explain",
+    "pages/indexMain/index",
     "pages/indexCanteen/index",
     "pages/indexCanteen/goodInfo/index",
     "pages/indexCanteen/flashSale/index",

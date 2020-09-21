@@ -111,12 +111,12 @@
 				return
 			}
 			if (!app.globalData.openID) {
-				this.$showLoads(0, '') //加载
+				// this.$showLoads(0, '') //加载
 				this.$store.dispatch('Login').then(D => {
 					this.getList(app.globalData.openID)
 				})
 			} else {
-				this.$showLoads(0, '') //加载
+				// this.$showLoads(0, '') //加载
 				this.getList()
 			}
 			this.provider = app.globalData.provider
@@ -504,7 +504,7 @@
 
 		.homepageLeftFixed {
 			font-size: 11pt;
-			margin-bottom: 96px;
+			margin-bottom:105px;
 			color: #707070;
 			font-weight: 500;
 			background: #f9f9f9;
@@ -544,6 +544,7 @@
 
 		.homepageRight {
 			margin-left: 74px;
+			margin-bottom: 65px;
 		}
 
 		.homepage .iconCard {
