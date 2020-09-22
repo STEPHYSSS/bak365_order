@@ -6,7 +6,7 @@
 					<view class="areaListBox_title">{{item.Address}}</view>
 					<uni-tag style="margin-right:8px" size="small" text="默认地址" v-if="item.IsDefault === '1'"></uni-tag><text class="areaListBox_phone">{{item.Mobile}}&nbsp;{{item.Name}}</text>
 				</view>
-				<text class="icon areaListBoxEdit" @click.stop="EditArea(item)">&#xe639;</text>
+				<text class="icon areaListBoxEdit" v-if="item.IsAvailable ==='0'||item.IsAvailable ==='1'" @click.stop="EditArea(item)">&#xe639;</text>
 				<view class="disabledBox" v-if="OptType=='1'&&item.IsAvailable==='0'"></view>
 			</view>
 		</view>
@@ -60,6 +60,7 @@
 				})
 			},
 			EditArea(item) {
+				console.log(item,'在配送范围内的时候')
 				let itemObj = JSON.stringify(item)
 				uni.navigateTo({
 					url: '/pages/indexCanteen/areaList/addArea?OptType=' + this.OptType + '&item=' + itemObj
@@ -79,6 +80,7 @@
 					uni.setStorageSync('currentAreaMy', item)
 					
 					if(this.editArea){
+						
 						uni.navigateBack({
 							 delta: 2
 						});
@@ -146,6 +148,7 @@
 				text-align: center;
 				height: 40px;
 				line-height: 40px;
+				z-index: 50;
 			}
 		}
 

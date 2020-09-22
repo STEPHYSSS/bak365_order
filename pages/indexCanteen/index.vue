@@ -29,7 +29,7 @@
 				</view>
 			</view>
 			<bottom-submit v-if="allMoney>0" :allMoney="allMoney" :addNum="addNum" :cartLists="cartLists" @clickClear="clickClear"
-			 @setCartList="setCartList" @changeMax="changeMax" @determine="determine">88888</bottom-submit>
+			 @setCartList="setCartList" @changeMax="changeMax" @determine="determine"></bottom-submit>
 
 			<!--旧 <bottom-box :allMoney="allMoney" :addNum="addNum" @setCartList="setCartList" :cartList="cartLists" @clickClear="clickClear"
 			 @determine="determine" popupShow="popupShow"></bottom-box> -->
@@ -102,21 +102,23 @@
 			}
 		},
 		onShow: function() {
+			this.shopName = uni.getStorageSync('shopLocationName');
 			// app.globalData.isPack = 2
 			// this.getList()//打包记得删除
+			// isPack 表示就餐方式
 			if (!app.globalData.isPack) {
 				uni.redirectTo({
 					url: "../indexMain/index"
-				})
+				});
 				return
 			}
 			if (!app.globalData.openID) {
-				// this.$showLoads(0, '') //加载
+				this.$showLoads(0, '') //加载
 				this.$store.dispatch('Login').then(D => {
 					this.getList(app.globalData.openID)
 				})
 			} else {
-				// this.$showLoads(0, '') //加载
+				this.$showLoads(0, '') //加载
 				this.getList()
 			}
 			this.provider = app.globalData.provider
@@ -544,7 +546,7 @@
 
 		.homepageRight {
 			margin-left: 74px;
-			margin-bottom: 65px;
+			margin-bottom: 74px;
 		}
 
 		.homepage .iconCard {

@@ -9,7 +9,7 @@
 <template>
 	<!--基础元素-->
 	<div class="wxParse" :class="className" v-if="!loading">
-		<block v-for="(node,index) of nodes" :key="index">
+		<block v-for="(node,index) of nodes" :key="index" style="width: 100%;height: 100%;background-color: #8DC63F;">
 			<wxParseTemplate :node="node" />
 		</block>
 	</div>
@@ -147,3 +147,6 @@
 		},
 	};
 </script>
+<style>
+@import url("./u-parse.css");
+</style>

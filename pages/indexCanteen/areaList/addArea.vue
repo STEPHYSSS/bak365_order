@@ -196,7 +196,15 @@
 				this.currentQQMap = uni.getStorageSync('currentQQMap')
 				this.form.Latitude = this.currentQQMap.latitude
 				this.form.Longitude = this.currentQQMap.longitude
-				this.form.Address = this.currentQQMap.addr + '(' + this.currentQQMap.title + ')'
+				if(this.currentQQMap.addr === undefined){
+					uni.showToast({
+						title: '请选择具体地址',
+						icon:'none',
+					});
+				}else{
+					this.form.Address = this.currentQQMap.addr + '(' + this.currentQQMap.title + ')'
+				}
+				
 			}
 		}
 	}

@@ -248,6 +248,10 @@
 		
 		},
 		onShow() {
+			// console.log(app.globalData.isDraw,'44444')
+			// if (app.globalData.isDraw && this.couponList.length > 0) {
+			// 	this.showDiscount = true
+			// }
 			// 再一次点击进来
 			if (!app.globalData.isDraw && this.couponList.length > 0) {
 				this.showDiscount = true
@@ -290,12 +294,12 @@
 					// console.log(D,'DDDDD')
 					this.ActiveID = D.ActiveID
 
-					this.CarouselImgInfo = D.CarouselImgInfo
+					this.CarouselImgInfo = D.CarouselImgInfo//轮播图
 					this.isShowCode = D.IsShowCardCode
-					this.currentStore = D.ShopInfo
+					this.currentStore = D.ShopInfo//门店信息
 					this.couponList = D.SendProgInfo.ProgDetail || []
 					this.SendProgInfo = D.SendProgInfo
-					this.modeChange = {
+					this.modeChange = {//就餐方式
 						LogisticsDistribution: D.WX_LogisticsDistribution,
 						OrderEatInStore: D.WX_OrderEatInStore,
 						OrderEatPackAway: D.WX_OrderEatPackAway,
@@ -307,7 +311,14 @@
 					}
 					this.$showLoads(1)
 					// this.loading = true
-				}).catch(e => {})
+				}).catch(e => {
+					this.$showLoads(1)
+					uni.showToast({
+						title: e,
+						icon: 'none'
+					});
+					console.log(e,'错误提示')
+				})
 			},
 			//获取轮转图图片高度
 			swiperImageLoad: function(e, index) {
@@ -438,7 +449,8 @@
 						latitude: this.currentStore.Latitude || '',
 						longitude: this.currentStore.Longitude || ''
 					})
-					uni.setStorageSync('shopLocationName', this.currentStore.ShopName)
+					uni.setStorageSync('shopLocationName', this.currentStore.ShopName);
+					uni.setStorageSync('shopNo', this.currentStore.ShopNo)
 				}
 			}
 		}

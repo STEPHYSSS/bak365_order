@@ -184,7 +184,7 @@
 						.StockQty) -
 					Number(this.itemData.ActiveSaleCount) : Number(this.itemData.StockQty))
 			this.newItemData.num = 1
-			console.log(this.newItemData.num, '显示加减组件');
+			// console.log(this.newItemData.num, '显示加减组件');
 		},
 		computed: {
 			newItemData(){
@@ -267,7 +267,7 @@
 			},
 			// 商品弹出窗中商品购买数量点击事件
 			onChangeNum(val) {
-				console.log(val,'商品弹出窗中商品购买数量点击事件')
+				// console.log(val,'商品弹出窗中商品购买数量点击事件')
 				this.newItemData.num = val
 			},
 			clickTag() {

@@ -39,6 +39,7 @@
 		methods: {
 			getList() {
 				APIList.api('DefinedIndexPage.aspx').then(D => {
+					console.log(app.globalData.shopNo,'商户编号')
 					this.$showLoads(1, '')
 					if (D.PageInfo.length === 0) {
 						uni.reLaunch({
