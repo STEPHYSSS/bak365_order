@@ -272,7 +272,7 @@
 					this.PayDisabled = false
 				}).catch(err => {
 					this.PayDisabled = false
-					console.log(err, 3333)
+					// console.log(err, 3333)
 				})
 				this.showPayType = false
 			},
@@ -305,7 +305,10 @@
 						this.getData()
 					}, 1000);
 				}).catch(err => {
-					console.log(err, 3333)
+					uni.showToast({
+						title: err,
+						icon: 'none'
+					});
 				})
 			},
 			takeOverFun() {

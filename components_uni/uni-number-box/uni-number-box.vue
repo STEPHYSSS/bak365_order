@@ -61,7 +61,7 @@
 		},
 		methods: {
 			_calcValue(type) {
-				console.log(type,'加还是减的标志')
+				// console.log(type,'加还是减的标志')
 				if (type === 'plus') {
 					if (this.disabledright) {
 						this.$emit('changeMax')

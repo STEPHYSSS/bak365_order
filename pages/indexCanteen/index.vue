@@ -179,7 +179,7 @@
 				this.allMoney = cartListArr.length > 0 ? parseFloat(this.allMoney.toFixed(2)) : 0
 			},
 			setShowStepper(bool, index) {
-				console.log(this.arrayList[index], '商品');
+				// console.log(this.arrayList[index], '商品');
 				this.$set(this.arrayList[index], 'showStepper', bool)
 			},
 			changeMax(index) {

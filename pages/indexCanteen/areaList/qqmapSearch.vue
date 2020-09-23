@@ -110,7 +110,7 @@
 							}
 							this.suggestion = mks
 						}).catch(e => {
-							console.log(e, 'ee')
+							// console.log(e, 'ee')
 							uni.showToast({
 								title: e,
 								icon: 'none'

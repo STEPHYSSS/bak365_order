@@ -60,7 +60,7 @@
 				})
 			},
 			EditArea(item) {
-				console.log(item,'在配送范围内的时候')
+				// console.log(item,'在配送范围内的时候')
 				let itemObj = JSON.stringify(item)
 				uni.navigateTo({
 					url: '/pages/indexCanteen/areaList/addArea?OptType=' + this.OptType + '&item=' + itemObj

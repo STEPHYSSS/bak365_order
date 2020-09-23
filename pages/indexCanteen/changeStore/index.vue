@@ -133,6 +133,7 @@
 					return
 				}
 				if (this.isNearby) {
+					// console.log(this.isNearby,'hhhhh',e)
 					app.globalData.shopNo = e.ShopNo
 					let newE = JSON.stringify(e)
 					uni.setStorageSync('cartList', [])

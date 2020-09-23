@@ -164,27 +164,33 @@
 		},
 		onLoad: function(options) {
 			this.ActiveID = options.options
+			
+			var obj = wx.getLaunchOptionsSync()
+			console.log('启动小程序的 query 参数:', obj.query)
 			// 只执行一遍
-			// console.log(options.q)
-			var httpUrl = options.q ? decodeURIComponent(options.q) : ''
+			// console.log(options.q,'options.q')
+			 //var httpUrl = obj.query? decodeURIComponent(obj.query) : ''
+			 
 			// var httpUrl = 'https://we.bak365.net/SmallProgramSaleOrder/Mobile/SmallProgramIndexLink.aspx?ShopNo=0600&TableNumber=2'
 			var objParam = {}
-			if (httpUrl) {
-				//截取
-				var strParam = httpUrl.slice(httpUrl.indexOf("?"))
-				strParam = strParam.substr(1)
-				var arrParam = strParam.split("&");
-				arrParam.forEach(D => {
-					var a = D.split("=")[0]
-					objParam[a] = D.split("=")[1]
-				})
-			} else {
-				// console.log(app.globalData.isScanEnter,'8888')
-				objParam = {}
-			}
+			// if (httpUrl) {
+			// 	//截取
+			// 	//var strParam = httpUrl.slice(httpUrl.indexOf("?"))
+			// 	//strParam = strParam.substr(1)
+			// 	var strParam = httpUrl;
+			// 	var arrParam = strParam.split("&");
+			// 	arrParam.forEach(D => {
+			// 		var a = D.split("=")[0]
+			// 		objParam[a] = D.split("=")[1]
+			// 	})
+			// } else {
+			// 	// console.log(app.globalData.isScanEnter,'8888')
+			// 	objParam = {}
+			// }
 		
 			var _this = this
-			// objParam.ShopNo = '7701'
+			console.log(obj.query.ShopNo)
+			objParam.ShopNo = obj.query.ShopNo
 			if (objParam.ShopNo) {
 				this.isShopNum = true
 				app.globalData.shopNo = objParam.ShopNo
@@ -248,9 +254,11 @@
 		
 		},
 		onShow() {
-			// console.log(app.globalData.isDraw,'44444')
-			// if (app.globalData.isDraw && this.couponList.length > 0) {
-			// 	this.showDiscount = true
+			// let IsShop = uni.getStorageSync('shopLocationName');
+			// if(IsShop){
+			// 	this.currentStore = uni.getStorageSync('shopLocationName');//暂时注释
+			// 	this.shopNo = uni.getStorageSync('ShopNo'); //暂时注释
+			// 	this.getObj();
 			// }
 			// 再一次点击进来
 			if (!app.globalData.isDraw && this.couponList.length > 0) {
@@ -317,7 +325,6 @@
 						title: e,
 						icon: 'none'
 					});
-					console.log(e,'错误提示')
 				})
 			},
 			//获取轮转图图片高度

@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/indexMain/index",
     "pages/indexHomePage/index",
     "pages/indexCanteen/collage/index",
     "pages/indexOrder/oderList/index",
@@ -9,7 +8,7 @@
     "pages/indexCanteen/collage/collageList",
     "pages/indexVip/index",
     "pages/indexCanteen/collage/explain",
-    
+    "pages/indexMain/index",
     "pages/indexCanteen/index",
     "pages/indexCanteen/goodInfo/index",
     "pages/indexCanteen/flashSale/index",
@@ -72,6 +71,5 @@
     "goods-box": "/components/AutoComponents/goodsBox/index",
     "active-list": "/components/AutoComponents/activeList/index",
     "collage-list": "/components/AutoComponents/collage/index"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

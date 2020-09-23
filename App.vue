@@ -7,7 +7,9 @@
 			if (options.query && options.query.qrCode) {
 				let qrCode = options.query.qrCode;
 				let cutUrlStr = cutUrl(qrCode)
+				console.log(cutUrlStr,'cutUrlStr')
 				this.globalData.isScanEnter = cutUrlStr
+				console.log(this.globalData.isScanEnter,'扫码的状态')
 			}
 			var extConfig = {}
 			let _this = this

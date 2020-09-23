@@ -494,6 +494,14 @@
 					});
 					return
 				}
+				// 判断是否在配送范围内
+				if(this.currentArea.ErrorInfo){
+					uni.showToast({
+						title: this.currentArea.ErrorInfo,
+						icon: 'none'
+					});
+					return
+				}
 				// 结账
 				if (this.provider === 'weixin' && this.orderObj.PayInfo.WX_WxPay !== '1' && this.radio == 2) {
 					// 微信，不支持微信支付

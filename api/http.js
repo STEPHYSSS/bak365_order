@@ -21,7 +21,7 @@ const api = (aspx, data, openID, isPack, methods, AppID) => {
 				'content-type': methods ? 'application/x-www-form-urlencoded' : 'application/json'
 			},
 			success: function(result) {
-				console.log(result, 'config')
+				// console.log(result, 'config')
 				if (!result.data) {
 					uni.showToast({
 						title: "接口请求失败，请重试",
@@ -49,7 +49,7 @@ const api = (aspx, data, openID, isPack, methods, AppID) => {
 				}
 			},
 			fail: function(err) {
-				console.log(err, 'errerr')
+				// console.log(err, 'errerr')
 				uni.showToast({
 					title: typeof(err) == 'string' || err ? err : "请求失败，请重试",
 					icon: 'none'

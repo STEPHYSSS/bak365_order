@@ -102,7 +102,6 @@
 					ProdNo: _this.ProdNo
 				}).then(D => {
 					this.goodInfo = D
-						// https://we.bak365.net/SmallProgramSaleOrder
 					this.article = D.FeaturesHtmlInfo
 					var arr = this.article.split('<img')
 					var data = arr.map(val => val.replace('../', 'https://we.bak365.net/SmallProgramSaleOrder/'));
@@ -249,6 +248,7 @@
 			}
 		},
 		onLoad: function(options) {
+			console.log(options,'options')
 			this.ProdNo = options.ProdNo
 			this.getInfo()
 			const {
@@ -258,7 +258,7 @@
 			this.windowWidth = windowWidth
 
 			if (!app.globalData.shopNo || !app.globalData.isPack) {
-				console.log('没有门店');
+				// console.log('没有门店');
 				//没有门店，跳到门店列表
 				uni.reLaunch({
 					url: '/pages/indexCanteen/changeStore/index?goodInfo=' + this.ProdNo
@@ -271,7 +271,7 @@
 
 				})
 			} else {
-				console.log('获取数据');
+				// console.log('获取数据');
 				this.getInfo()
 			}
 		},

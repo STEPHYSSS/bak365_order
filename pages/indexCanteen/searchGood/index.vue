@@ -100,7 +100,7 @@
 				})
 			},
 			bindinput(val) {
-				console.log(val, 'val')
+				// console.log(val, 'val')
 				this.searchValue = val.detail.value
 				if (!val.detail.value) {
 					this.arrayList = []
@@ -111,7 +111,7 @@
 				uni.getStorage({
 					key: "historyList",
 					success(res) {
-						console.log(res, 'res')
+						// console.log(res, 'res')
 						_this.historyList = res.data
 					}
 				})

@@ -364,7 +364,7 @@ const weChatPayment = (app, orderId, D, isCardPay,isCollage) => {
 							url: '/pages/indexVip/index'
 						})
 					}
-					console.log('requestPayment支付失败')
+					// console.log('requestPayment支付失败')
 				}
 			},
 			fail: function(res) {

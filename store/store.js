@@ -107,7 +107,7 @@ function loginHttp(url, code, app, resolve) {
 			'content-type': 'application/json'
 		},
 		success: function(result) {
-			console.log(result)
+			// console.log(result)
 			if (result.data.Code == "1") {
 				app.globalData.openID = result.data.Msg
 				// wx.setStorageSync('OpenID', result.data.Msg)
